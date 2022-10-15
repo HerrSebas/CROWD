@@ -1,4 +1,8 @@
-<h1>events#edit</h1>
-<p>welcome to the edit page</p>
-<%= render "form" %>
-<%= link_to "Delete flat", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<div class="container-form">
+
+  <h1>events#edit</h1>
+  <p>welcome to the edit page</p>
+  <%= render "form" %>
+  <%= link_to "Delete flat", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+</div>
