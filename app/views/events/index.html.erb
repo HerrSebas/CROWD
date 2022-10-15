@@ -1,0 +1,7 @@
+<h1>event#index</h1>
+<p>Find mi in app/views/events/index</p>
+<ul>
+  <% @events.each do |event| %>
+  <li><%= link_to event.event_name, event_path(event.id) %></li>
+  <% end  %>
+</ul>
