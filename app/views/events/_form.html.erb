@@ -1,10 +1,14 @@
-<%= simple_form_for @event do |f| %>
-  <%= f.input :event_name %>
-  <%= f.input :event_location %>
-  <%= f.input :event_capacity %>
-  <%= f.input :event_date %>
-  <%= f.input :event_latitude %>
-  <%= f.input :event_longitude %>
-  <%= f.input :event_price %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container-form">
+
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :event_name %>
+    <%= f.input :event_location %>
+    <%= f.input :event_capacity %>
+    <%= f.input :event_date %>
+    <%= f.input :event_latitude %>
+    <%= f.input :event_longitude %>
+    <%= f.input :event_price %>
+    <%= f.button :submit %>
+  <% end %>
+
+<div class="container-form">
