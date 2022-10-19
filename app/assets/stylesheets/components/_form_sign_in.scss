@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
+
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  height: 846px;
+  width: 907px;
+  margin-top: 130px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-header {
+  margin: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form {
+  width: 650px;
+  height: 508px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+.button-sign-up{
+  border-radius: 15px;
+  width: 151;
+  height: 55;
+  margin-top: 40px;
+  padding-top: 6px;
+  background-color: #FF017B;
+  font-family: 'Righteous', cursive;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+h2{
+  font-size: 38px;
+  font-family: 'Righteous', cursive;
+  font-style: normal;
+  color: #FFFFFF;
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+}
