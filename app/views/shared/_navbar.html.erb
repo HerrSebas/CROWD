@@ -41,14 +41,16 @@
             <% end  %>
 
             <li class="nav-item dropdown">
-              <%# if current_user.photo.present? %>
-              <%# <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <%# <% else %>
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-user-image-179582665.jpg" />
 
+              <% if current_user.photo.present? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-user-image-179582665.jpg" />
+              <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Profile", pages_profile_path, class: "dropdown-item" %>
-                <%# <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
+                <%= link_to "Bookings", events_path, class: "dropdown-item" %>
+
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
               </div>
             </li>
