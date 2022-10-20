@@ -5,4 +5,10 @@
 
   <h1><%= link_to @event.event_name, edit_event_path(@event) %></h1>
 
+  <%= simple_form_for @ticket do |f| %>
+    <%= f.input :ticket_price %>
+    <%= f.input :total_price %>
+    <%= f.button :submit %>
+  <% end %>
+
 </div>
