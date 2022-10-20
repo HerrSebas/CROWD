@@ -1,8 +1,10 @@
-  <h3 class="text-dark py-4">Your information</h3>
-  <ul>
-    <li class="py-2">Name: <%= current_user.name %></li>
-    <li class="py-2">Last name: <%= current_user.last_name %></li>
-    <li class="py-2">Identification: <%= current_user.identification_number %></li>
-    <li class="py-2">Email: <%= current_user.email %></li>
-  </ul>
-  <%= link_to "Edit profile", edit_user_registration_path, class: "button-50" %>
+  <div class="container-form">
+    <h3 class="text-dark py-4">Your information</h3>
+    <ul>
+      <li class="py-2">Name: <%= current_user.name %></li>
+      <li class="py-2">Last name: <%= current_user.last_name %></li>
+      <li class="py-2">Identification: <%= current_user.identification_number %></li>
+      <li class="py-2">Email: <%= current_user.email %></li>
+    </ul>
+    <%= link_to "Edit profile", edit_user_registration_path, class: "button-50" %>
+  </div>
