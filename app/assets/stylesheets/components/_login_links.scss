@@ -1,0 +1,16 @@
+.login-links{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #B2208E;
+  br {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
