@@ -6,20 +6,88 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require "open-uri"
-puts "creating seed"
+puts "Destoying all events"
+Event.destroy_all
 
-  file = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666139419/qgqkqdd2cl0mckisrhgl.jpg")
+require "open-uri"
+puts "Creating evets_seeds"
+
+  file = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/2_abp7fy.png")
   event = Event.new(
     event_date: "3-3-2023",
-    event_location: "Merida",
-    event_capacity: 2000,
-    event_name: "Tequila Match",
-    event_latitude: "20.9753700",
-    event_longitude: "-89.6169600",
+    event_location: "Medellin",
+    event_capacity: 45000,
+    event_name: "Clásico Paisa",
+    event_latitude: "6.25184",
+    event_longitude: "-75.56359",
     event_price: 20
   )
   event.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   event.save
 
-puts "seeds have been created"
+  file2 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/5_mb7mtf.png")
+  event2 = Event.new(
+    event_date: "3-3-2023",
+    event_location: "Bogotá",
+    event_capacity: 50000,
+    event_name: "Clásico Capitalino",
+    event_latitude: "4.60971",
+    event_longitude: "-74.08175",
+    event_price: 20
+  )
+  event2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+  event2.save
+
+  file3 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/4_ior6lx.png")
+  event3 = Event.new(
+    event_date: "3-3-2023",
+    event_location: "Cali",
+    event_capacity: 40000,
+    event_name: "Clásico Valluno",
+    event_latitude: "3.43722",
+    event_longitude: "-76.5225",
+    event_price: 20
+  )
+  event3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+  event3.save
+
+  file4 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/3_yqntlo.png")
+  event4 = Event.new(
+    event_date: "3-3-2023",
+    event_location: "Barranquilla",
+    event_capacity: 50000,
+    event_name: "Clásico Costeño",
+    event_latitude: "10.96854",
+    event_longitude: "-74.78132",
+    event_price: 20
+  )
+  event4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+  event4.save
+
+  file5 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311275/CROWD/7_e4mvmo.png")
+  event5 = Event.new(
+    event_date: "3-3-2023",
+    event_location: "Montería",
+    event_capacity: 20000,
+    event_name: "Clásico Felino",
+    event_latitude: "8.74798",
+    event_longitude: "-75.88143",
+    event_price: 10
+  )
+  event5.photo.attach(io: file5, filename: "nes.png", content_type: "image/png")
+  event5.save
+
+  file6 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311275/CROWD/8_an2up2.png")
+  event6 = Event.new(
+    event_date: "3-3-2023",
+    event_location: "Pasto",
+    event_capacity: 20000,
+    event_name: "Clásico del Cuy",
+    event_latitude: "1.21361",
+    event_longitude: "-77.28111",
+    event_price: 10
+  )
+  event6.photo.attach(io: file6, filename: "nes.png", content_type: "image/png")
+  event6.save
+
+puts "6 events_seeds have been created"
