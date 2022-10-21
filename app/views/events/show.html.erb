@@ -6,7 +6,7 @@
   <h1><%= link_to @event.event_name, edit_event_path(@event) %></h1>
   <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
 
-  <%= simple_form_for @ticket do |f| %>
+  <%= simple_form_for [@event, @event.tickets.build] do |f| %>
     <%= f.input :ticket_price %>
     <%= f.input :total_price %>
     <%= f.button :submit %>
