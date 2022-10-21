@@ -43,7 +43,7 @@ class TicketsController < ApplicationController
     params.require(:ticket).permit(:event_id, :user_id, :order_id, :ticket_price)
   end
 
-  def set_event
+  def set_ticket
     @ticket = Ticket.find(params[:id])
   end
 end
