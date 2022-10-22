@@ -7,12 +7,15 @@
   <% if @event.photo %>
     <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
+  <ul>
+    <li>Date: <%= @event.event_date %></li>
+    <li>Location: <%= @event.event_location %></li>
+    <li>Price:<%= @event.event_price %></li>
+  </ul>
 
-
-
-  <%= simple_form_for [@event, @event.tickets.build] do |f| %>
-    <%= f.input :ticket_price %>
-    <%= f.button :submit %>
+  <% if user_signed_in? %>
+    <h1><%= link_to "Buy tickets", new_event_order_path(@event) %></h1>
+  <% else %>
+    <h1>Log in to buy tickets</h1>
   <% end %>
-
 </div>
