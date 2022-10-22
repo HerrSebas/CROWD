@@ -1,3 +1,18 @@
+.container-profile {
+  background-image: url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.card {
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
 .profile-card-4 .card-img-block {
   float: left;
   width: 100%;
