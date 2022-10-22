@@ -1,4 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
 
+i {
+  width: 20px !important;
+}
 
+.card {
+  background-color: grey;
+  width: 381px;
+  height: 138px;
+}
+
+.card-body {
+  overflow-wrap: break-word;
+  width: 381px;
+  height: 138px;
+}
