@@ -10,12 +10,18 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+    @event = Event.find(params[:event_id])
+    authorize @ticket
   end
 
   def create
-    @ticket = Ticket.new(event_params)
+    @ticket = Ticket.new(ticket_params)
+    @event = Event.find(params[:flat_id])
+    @ticket.event = @event
+    @ticket.user = current_user
+    authorize @ticket
     if @ticket.save
-      redirect_to events_path
+      redirect_to new_event_ticket_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,15 +29,15 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to lists_path, status: :see_other
+    redirect_to event_ticket_path, status: :see_other
   end
 
   def edit
   end
 
   def update
-    if @ticket.update(event_params)
-      redirect_to @event
+    if @ticket.update(ticket_params)
+      redirect_to @ticket
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +45,7 @@ class TicketsController < ApplicationController
 
   private
 
-  def event_params
+  def ticket_params
     params.require(:ticket).permit(:event_id, :user_id, :order_id, :ticket_price)
   end
 
