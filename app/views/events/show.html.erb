@@ -4,14 +4,15 @@
   <p>Find mi in app/views/events/show</p>
 
   <h1><%= link_to @event.event_name, edit_event_path(@event) %></h1>
-  <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if @event.photo %>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
-  <p> Event: <%=ticket.event.event_id %> </p>
 
 
   <%= simple_form_for [@event, @event.tickets.build] do |f| %>
     <%= f.input :ticket_price %>
     <%= f.button :submit %>
   <% end %>
-    <p>Total: <%= @event.tickets.total_price %> </p>
+
 </div>
