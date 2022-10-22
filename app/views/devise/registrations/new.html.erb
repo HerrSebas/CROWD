@@ -4,18 +4,15 @@
       <h2>Sign up</h2>
       <p>Crea una cuenta para comprar tus boletas</p>
     </div>
-
     <div class="form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
-
             <%= f.input :name,
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "name" },
                         class: "form-input"
                         %>
-
           <div class="form-input">
             <%= f.input :last_name,
                         required: true,
@@ -43,15 +40,14 @@
           <div class="form-input">
             <%= f.input :password_confirmation,
                       required: true,
-
                       input_html: { autocomplete: "new-password" } %>
           </div>
+          <div class="form-input">
             <%= f.input :photo, as: :file %>
-
-
-
+          </div>
+          <div class="form-input">
             <%= f.button :submit, "Sign up", class: "button-sign-up" %>
-
+          </div>
       <% end %>
     </div>
   </div>

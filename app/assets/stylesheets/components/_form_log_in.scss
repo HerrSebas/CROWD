@@ -1,0 +1,25 @@
+.main-login-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-login-container {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  height: 480px;
+  width: 500px;
+  margin-top: 130px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-login-inputs{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+}
