@@ -47,7 +47,7 @@
               <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Profile", pages_profile_path, class: "dropdown-item" %>
-                <%= link_to "Bookings", events_path, class: "dropdown-item" %>
+                <%= link_to "Events", events_path, class: "dropdown-item" %>
 
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
               </div>
