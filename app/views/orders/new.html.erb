@@ -1,0 +1,8 @@
+<div class= "container pt-700 bg-dark">
+<h2>Bienvenido! <%= current_user.name %></h1>
+
+  <%= simple_form_for [@event, @order] do |f| %>
+    <%= f.input :tickets_quantity, label:"Cantidad", input_html:{} %>
+    <%= f.submit :button %>
+  <% end %>
+</div>
