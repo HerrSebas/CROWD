@@ -1,0 +1,24 @@
+.main-container-event {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666473772/rsz_1futbol_fan_1_lnqurc.jpg");
+}
+
+.form-container-event {
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  width: 907px;
+  margin-top: 130px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
