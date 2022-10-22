@@ -1,0 +1,5 @@
+<%= simple_form_for [@event, @event.tickets.build] do |f| %>
+    <%= f.input :ticket_price %>
+    <p>Total:</p> <%=  :total_price %>
+    <%= f.button :submit %>
+  <% end %>
