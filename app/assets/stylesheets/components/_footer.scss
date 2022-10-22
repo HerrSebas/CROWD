@@ -5,10 +5,10 @@
 }
 
 footer {
-  bottom: 0;
-  position: absolute;
+  //bottom: 0;
+  top: 100%;
+  position: sticky;
   width: 100%;
-  position: relative;
 }
 
 section {
