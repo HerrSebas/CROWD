@@ -4,7 +4,9 @@
   <p>Find mi in app/views/events/show</p>
 
   <h1><%= link_to @event.event_name, edit_event_path(@event) %></h1>
-  <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if @event.photo %>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
 <div>
   <p> Boletas para <%=@event.event_name %> </p>
