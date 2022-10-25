@@ -1,25 +1,25 @@
-<div class="container-form m-4">
+<h1 class="mx-width"><%= link_to @event.event_name, edit_event_path(@event) %></h1>
+<div class="container">
 
-  <h1>event#show</h1>
-  <p>Find mi in app/views/events/show</p>
+    <div class="row align-items-start">
+      <div class="col bg-secondary">
+        <p> Boletas para <%=@event.event_name %> </p>
+        <p> Fecha: <%=@event.event_date %> </p>
+        <p> Lugar: <%=@event.event_location %> </p>
+        <p> Aforo: <%=@event.event_capacity %> </p>
+        <p> Precio:<%= @event.event_price %> </p>
+      </div>
 
-  <h1><%= link_to @event.event_name, edit_event_path(@event) %></h1>
-  <% if @event.photo %>
-    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <ul>
-    <li>Date: <%= @event.event_date %></li>
-    <li>Location: <%= @event.event_location %></li>
-    <li>Price:<%= @event.event_price %></li>
-  </ul>
+      <div class="col m-1">
+        <% if @event.photo %>
+          <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
 
-<div>
-  <p> Boletas para <%=@event.event_name %> </p>
-  <p> Fecha: <%=@event.event_date %> </p>
-  <p> Lugar: <%=@event.event_location %> </p>
-  <p> Aforo: <%=@event.event_capacity %> </p>
+<%= link_to "Back", events_path %>
+
 </div>
-
 
   <%#= simple_form_for [@event, @event.tickets.build] do |f| %>
     <%#= f.input :ticket_price %>

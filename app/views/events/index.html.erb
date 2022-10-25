@@ -16,25 +16,22 @@
     <% end %>
   </div>
 
-  <div class="card-grid">
+  <div class="card-group">
     <div class="row row-cols-3">
       <% if @events %>
         <% @events.each do |event| %>
-        <div class="card col">
-          <div class="card-body text-wrap row">
-            <div class="col-8">
-              <h5 class="card-title-events"><%= link_to event.event_name, event_path(event.id)  %></h5>
-            </div>
-            <div class="col-4">
-              <h5 class="card-text">
-                <%= event.event_date %></h5>
-              <!-- esto es un condicional. Si hay boletas se muestra el lugar, si no, el boton de sold out---> <p class="card-details"><%= event.event_location%>
-                <%#= link_to "Edit event", edit_event_path(event), class: "card-btn btn btn-primary" %></p>
-            </div>
+      <div class="card col">
+        <div class="card-body">
+          <div class="col-8">
+            <h5 class="card-title-events"><%= link_to event.event_name, event_path(event.id)  %></h5>
+          </div>
+          <div class="col-4">
+            <h5 class="card-text"><%= event.event_date %></h5>
+            <p class="card-details"><%= event.event_location%></p>
           </div>
         </div>
+      </div>
         <% end %>
       <% end %>
     </div>
   </div>
-</div>
