@@ -21,12 +21,13 @@
 </div>
 
 
-  <%= simple_form_for [@event, @event.tickets.build] do |f| %>
-    <%= f.input :ticket_price %>
-    <%= f.button :submit %>
-  <% if user_signed_in? %>
-    <h1><%= link_to "Buy tickets", new_event_order_path(@event) %></h1>
-  <% else %>
+  <%#= simple_form_for [@event, @event.tickets.build] do |f| %>
+    <%#= f.input :ticket_price %>
+    <%#= f.button :submit %>
+  <%# if user_signed_in? %>
+    <!--<h1><%#= link_to "Buy tickets", new_event_order_path(@event) %></h1>
+  <%# else %>
     <h1>Log in to buy tickets</h1>
-  <% end %>
-</div>
+  <%# end %>
+  <%# end %>
+</div>-->

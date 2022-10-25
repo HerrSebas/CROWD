@@ -1,18 +1,57 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.body {
+  background-color: #d9d9d9;
+}
+
+.row {
+  justify-content: space-around;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 130px;
+}
+
+.card.col {
+  background: rgba(0, 0, 0, 0.79);
+  width: 381px;
+  height: 138px;
+  border-radius: 8px;
+}
+
+.card.card-body {
+  overflow-wrap: break-word;
+  
+}
+
+.card.card-text {
+  font-size: 28px;
+  font-family: 'Righteous', cursive;
+  width: 94px;
+}
+
+.card-body.card-details {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  width: 94px;
+}
+
+.card-body.card-btn {
+  width: 89px;
+  height: 32px;
+  border-radius: 15px;
+}
+
 i {
   width: 20px !important;
 }
 
-.card {
-  background-color: grey;
-  width: 381px;
-  height: 138px;
-}
 
-.card-body {
-  overflow-wrap: break-word;
-  width: 381px;
-  height: 138px;
+
+
+
+
+.search-bar {
+  padding-left: 230px;
+  padding-right: 230px;
 }
