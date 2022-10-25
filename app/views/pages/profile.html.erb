@@ -1,10 +1,45 @@
-  <div class="container-form">
-    <h3 class="text-dark py-4">Your information</h3>
-    <ul>
-      <li class="py-2">Name: <%= current_user.name %></li>
-      <li class="py-2">Last name: <%= current_user.last_name %></li>
-      <li class="py-2">Identification: <%= current_user.identification_number %></li>
-      <li class="py-2">Email: <%= current_user.email %></li>
-    </ul>
-    <%= link_to "Edit profile", edit_user_registration_path, class: "button-50" %>
+<div class="container-profile img-fluid">
+
+  <div class="col-md-5 mt-4">
+    <div class="card profile-card-4">
+      <div class="card-img-block">
+        <div class="info-box">Follow your passion. It will lead you to your purpose!</div>
+            <%# <img class="img-fluid" src="https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg" alt="Card image cap"> %>
+        </div>
+        <div class="card-body pt-5">
+            <%= cl_image_tag current_user.photo.key, class:"profile"  %>
+            <h5 class="card-title text-center"><%= current_user.name + current_user.last_name %></h5>
+            <p class="card-text text-center">You are a distinguished soccer fan.</p>
+            <li class="py-2"><strong> Identification: </strong> <%= current_user.identification_number %></li>
+            <li class="py-2"><strong> Email: </strong> <%= current_user.email %></li>
+        </div>
+        <div class="text-center">
+          <%= link_to "Edit profile", edit_user_registration_path, class: "btn button-sign-up" %>
+        </div>
+      </div>
   </div>
+
+  <div class="container events">
+    <div class="col-md-12 mt-4">
+      <div class="card profile-card-4">
+        <div class="card-body pt-5">
+          <h5 class="card-title text-center"> My events</h5>
+          <p class="card-text text-center">You have gone to:</p>
+          <li class="py-2"><strong> Event 1 </strong></li>
+          <li class="py-2"><strong> Event 2 </strong></li>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-4">
+      <div class="card profile-card-4">
+        <div class="card-body pt-5">
+          <h5 class="card-title text-center"> Upcoming events</h5>
+          <p class="card-text text-center">You might be interested in:</p>
+          <li class="py-2"><strong> Event 3 </strong></li>
+          <li class="py-2"><strong> Event 4 </strong></li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
