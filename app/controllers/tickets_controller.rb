@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
   before_action :set_event, only: %i[show edit update]
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.where(user: current_user)
   end
 
   def show
