@@ -3,19 +3,31 @@
   <h1>event#show</h1>
   <p>Find mi in app/views/events/show</p>
 
-  <h1><%= link_to @event.event_name, edit_event_path(@event) %></h1>
-  <% if @event.photo %>
-    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <ul>
-    <li>Date: <%= @event.event_date %></li>
-    <li>Location: <%= @event.event_location %></li>
-    <li>Price:<%= @event.event_price %></li>
-  </ul>
-
-  <% if user_signed_in? %>
-    <h1><%= link_to "Buy tickets", new_event_order_path(@event) %></h1>
-  <% else %>
-    <h1>Log in to buy tickets</h1>
-  <% end %>
+  <div class="event-container" style=" display:flex; flex:row;">
+    <div class="card-container-background">
+    <div class="card-event">
+      <div class="card-photo-title">
+          <% if @event.photo %>
+           <%= cl_image_tag @event.photo.key, class:"card-event-photo"%>
+          <% end %>
+        <h2><%= link_to @event.event_name, edit_event_path(@event), class:"card-event-title" %></h2>
+      </div>
+      <div class="card-description-content">
+        <div class="card-description">
+          <div class="description"><%= @event.event_date %></div>
+          <div class="description"><%= @event.event_location %></div>
+          <div class="price">$<%= @event.event_price %></div>
+        </div>
+        <% if user_signed_in? %>
+          <div class="btn-spacing">
+            <button type="text-center" class="button-sign-up">
+            <h2><%= link_to "BUY", new_event_order_path(@event), class:"btn-text"%></h2>
+            </button>
+          </div>
+        <% else %>
+          <h2>Log in to buy tickets</h2>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

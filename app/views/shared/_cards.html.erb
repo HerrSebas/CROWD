@@ -1,12 +1,6 @@
-<!--/events or event#index-->
-<div class="container-form m-4">
-
-  <h1>eventos</h1>
-
-  <!--div class="card-container-background">
-
+<div class="card-container" style=" display:flex; flex:row;">
+    <div class="card-container-background">
     <div class="card-event">
-      <% @event.each do |event| %>
       <div class="card-photo-title">
           <% if @event.photo %>
            <%= cl_image_tag @event.photo.key, class:"card-event-photo"%>
@@ -28,7 +22,5 @@
           <h2>Log in to buy tickets</h2>
         <% end %>
       </div>
-      <% end %>
     </div>
-  </div-->
-</div>
+  </div>
