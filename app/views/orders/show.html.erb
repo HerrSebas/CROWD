@@ -6,7 +6,7 @@
     <p>Cantidad: <%= @order.tickets.count %></p>
     <p>Valor: $<%= @order.tickets.first.ticket_price %></p>
   </ul>
-  <h1>Total: $<%= @order.tickets.sum(:ticket_price) %></h1>
+  <h1>Total: $<%= @order.total_price %></h1>
   <div class="text-center">
     <p class="btn btn-primary">Go to pay</p>
   </div>

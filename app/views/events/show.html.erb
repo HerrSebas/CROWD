@@ -1,8 +1,14 @@
-<div class="container-form m-4">
+<h1 class="mx-width"><%= link_to @event.event_name, edit_event_path(@event) %></h1>
+<div class="container">
 
-  <h1>event#show</h1>
-  <p>Find mi in app/views/events/show</p>
-
+    <div class="row align-items-start">
+      <div class="col bg-secondary">
+        <p> Boletas para <%=@event.event_name %> </p>
+        <p> Fecha: <%=@event.event_date %> </p>
+        <p> Lugar: <%=@event.event_location %> </p>
+        <p> Aforo: <%=@event.event_capacity %> </p>
+        <p> Precio:<%= @event.event_price %> </p>
+      </div>
   <div class="event-container" style=" display:flex; flex:row;">
     <div class="card-container-background">
     <div class="card-event">
@@ -30,4 +36,16 @@
       </div>
     </div>
   </div>
+
 </div>
+
+  <%#= simple_form_for [@event, @event.tickets.build] do |f| %>
+    <%#= f.input :ticket_price %>
+    <%#= f.button :submit %>
+  <%# if user_signed_in? %>
+    <!--<h1><%#= link_to "Buy tickets", new_event_order_path(@event) %></h1>
+  <%# else %>
+    <h1>Log in to buy tickets</h1>
+  <%# end %>
+  <%# end %>
+</div>-->

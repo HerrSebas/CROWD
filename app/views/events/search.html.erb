@@ -1,0 +1,12 @@
+<div class="container m-4">
+  <h2>Resultados de la búsqueda</h3>
+
+  <% @results.each do |result| %>
+    <div>
+      <h4><%= link_to result.event_name, event_path(result.id) %></h4>
+      <%= result.event_date %>,
+      <%= result.event_location %>
+    </div> <br>
+  <% end %>
+</div>
+
