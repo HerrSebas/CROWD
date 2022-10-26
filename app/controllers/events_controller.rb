@@ -33,6 +33,15 @@ class EventsController < ApplicationController
     end
   end
 
+  def search
+    if params[:search].blank?
+      redirect_to events_path
+    else
+      @parameter = params[:search].downcase
+      @results = Event.all.where("lower(event_name) LIKE :search", search: "%#{@parameter}%")
+    end
+  end
+
   private
 
   def event_params
