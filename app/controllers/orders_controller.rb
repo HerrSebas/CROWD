@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @event = Event.find(params[:event_id])
     @order.user = current_user
+    @order.total_price = @event.event_price * @order.tickets_quantity
     if @order.save
       @order.tickets_quantity.times do
         ticket = Ticket.new

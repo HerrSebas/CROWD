@@ -10,13 +10,24 @@
         <p> Precio:<%= @event.event_price %> </p>
       </div>
 
-      <div class="col m-1">
-        <% if @event.photo %>
-          <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      </div>
-    </div>
+  <h1><%=  @event.event_name %></h1>
+  <% if @event.photo %>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <ul>
+    <li>Date: <%= @event.event_date %></li>
+    <li>Location: <%= @event.event_location %></li>
+    <li>Price:<%= @event.event_price %></li>
+  </ul>
 
+  <% if user_signed_in? %>
+    <h1><%= link_to "Buy tickets", new_event_order_path(@event) %></h1>
+    <% if current_user.admin? %>
+      <h1><%= link_to "Edit event", edit_event_path(@event) %></h1>
+    <% end %>
+  <% else %>
+    <h1>Log in to buy tickets</h1>
+  <% end %>
 <%= link_to "Back", events_path %>
 
 </div>

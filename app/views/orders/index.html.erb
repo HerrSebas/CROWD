@@ -1,0 +1,13 @@
+<h2>Your Orders</h2>
+<% @orders.each do |order| %>
+  <ul>
+    <li>
+      <div class="container bg-dark">
+
+          <h3>Quantity: <%= order.tickets_quantity %></h3>
+          <h3>Purchased at: <%= order.created_at.to_date %></h3>
+          <h3>Amount: <%= order.total_price %></h3>
+      </div>
+    </li>
+  </ul>
+<% end %>
