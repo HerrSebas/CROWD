@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.card-container {
+  margin: 10px;
+}
+.card-container-background {
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1666466829/crowd/estadio_w5bozd.jpg);
+  background-size: cover;
+  width: 45%;
+  height: 210px;
+  border-radius: 8px;
+}
+
+.card-event {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-photo-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding-left: 5px;
+}
+
+.card-description-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px;
+  padding-left: 20px;
+}
+
+.card-event-photo {
+  width: 300px;
+  height: 148px;
+}
+
+.card-description{
+  margin: 5px;
+}
+
+.description {
+  text-align: center;
+  color:#ffffff;
+}
+
+.price {
+  font-family: "Righteous";
+  text-align: center;
+  color:#ffffff;
+  font-size: 20px;
+}
+
+.card-event-title {
+ font-family: "Righteous";
+ font-size: 20px;
+ color: #ffffff;
+ text-align: center;
+ justify-content: center;
+ text-decoration: none;
+}
+
+.title {
+ justify-content: center;
+}
+
+.btn-buy {
+  border-radius: 25px;
+  width: 120px;
+  height: 50px;
+  margin-top: 40px;
+  padding-top: 6px;
+  background-color: #FF017B;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+.btn-text {
+  font-family: "Righteous";
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-spicing {
+  margin-top: 20px;
+}
+.container-home {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
+  background-size: cover;
+  background-position: center;
+}

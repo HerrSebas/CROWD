@@ -3,6 +3,35 @@
   <div class="container">
     <h1>Pages#home</h1>
     <p>Find me in app/views/pages/home.html.erb</p>
-  </div>
 
+    <!--div class="card-container-background">
+
+      <div class="card-event">
+        <% @event.each do |event| %>
+        <div class="card-photo-title">
+            <% if @event.photo %>
+            <%= cl_image_tag @event.photo.key, class:"card-event-photo"%>
+            <% end %>
+          <h2><%= link_to @event.event_name, edit_event_path(@event), class:"card-event-title" %></h2>
+        </div>
+        <div class="card-description-content">
+          <div class="card-description">
+            <div class="description"><%= @event.event_date %></div>
+            <div class="description"><%= @event.event_location %></div>
+            <div class="price">$<%= @event.event_price %></div>
+          </div>
+          <% if user_signed_in? %>
+            <div class="btn-spacing">
+              <button type="button" class="btn-buy">
+              <h2><%= link_to "BUY", new_event_order_path(@event), class:"btn-text"%></h2>
+            </div>
+          <% else %>
+            <h2>Log in to buy tickets</h2>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div-->
+
+  </div>
 </div>
