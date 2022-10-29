@@ -28,6 +28,8 @@ class OrdersController < ApplicationController
         ticket.ticket_price = @event.event_price
         ticket.save
       end
+      mail = OrderMailer.with(user: current_user, order: @order, tickets: @order.tickets).confirmation
+      mail.deliver_now
       redirect_to @order
     else
       render :new, status: :unprocessable_entity

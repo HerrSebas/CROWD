@@ -6,7 +6,9 @@ class OrderMailer < ApplicationMailer
   #   en.order_mailer.confirmation.subject
   #
   def confirmation
-    @user = User.first
-    mail(to: @user.email, subject: 'Welcome to CROWD')
+    @order = params[:order]
+    @tickets = @order.tickets
+    @user = params[:user]
+    mail(to: @user.email, subject:  "Order details")
   end
 end

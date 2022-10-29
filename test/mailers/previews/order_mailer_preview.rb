@@ -8,5 +8,4 @@ class OrderMailerPreview < ActionMailer::Preview
     @tickets = @order.tickets
     OrderMailer.with(user: @user, order: @order, tickets: @tickets).confirmation
   end
-
 end
