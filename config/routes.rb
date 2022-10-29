@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show]
   resources :tickets, only: [:index]
+  resources :selfies, only: [:index, :new]
 end
