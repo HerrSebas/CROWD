@@ -1,9 +1,150 @@
-<div class="container-form">
-
-  <div class="container">
-    <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
-
-
+<div class="parallax-section parallax1">
+  <div class="grid grid-pad">
+    <div class="col-1-1">
+      <div class="content content-header" >
+        <h1>CROWD</h1>
+          <div class="search-bar m-4">
+            <%= form_tag(search_path, :method => "get") do %>
+              <div class="input-group">
+              <%= search_field_tag :search, params[:search], placeholder: "Search your event...", class: "form-control"%>
+                <div class="input-group-btn">
+                  <%= button_tag(type: "button", class: "btn btn-primary") do %>
+                  <i class="fa-solid fa-paper-plane-top"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+</svg>
+
+
+  <div class="wrap services-wrap bg-white" id="services">
+    <section class="grid grid-pad services bg-white">
+      <h2>Próximos eventos</h2>
+      <div class="container-form m-4">
+        <div class="card-group">
+    <div class="row row-cols-3">
+      <div class="card col card-container-bg">
+        <div class="card-event">
+          <div class="col-8">
+            <% if Event.first.photo %>
+              <%= cl_image_tag Event.first.photo.key, class:"card-event-photo-index"%>
+            <% end %>
+            <h5 class="card-title card-event-title"><%= link_to Event.first.event_name, event_path(Event.first.id)  %></h5>
+          </div>
+          <div class="col-4">
+            <p class="card-details card-details-text"><%= Event.first.event_date %></p>
+            <p class="card-details card-details-text"><%= Event.first.event_location%></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col card-container-bg">
+        <div class="card-event">
+          <div class="col-8">
+            <% if Event.second.photo %>
+              <%= cl_image_tag Event.second.photo.key, class:"card-event-photo-index"%>
+            <% end %>
+            <h5 class="card-title card-event-title"><%= link_to Event.second.event_name, event_path(Event.second.id)  %></h5>
+          </div>
+          <div class="col-4">
+            <p class="card-details card-details-text"><%= Event.second.event_date %></p>
+            <p class="card-details card-details-text"><%= Event.second.event_location%></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col card-container-bg">
+        <div class="card-event">
+          <div class="col-8">
+            <% if Event.third.photo %>
+              <%= cl_image_tag Event.third.photo.key, class:"card-event-photo-index"%>
+            <% end %>
+            <h5 class="card-title card-event-title"><%= link_to Event.third.event_name, event_path(Event.third.id)  %></h5>
+          </div>
+          <div class="col-4">
+            <p class="card-details card-details-text"><%= Event.third.event_date %></p>
+            <p class="card-details card-details-text"><%= Event.third.event_location%></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col card-container-bg">
+        <div class="card-event">
+          <div class="col-8">
+            <% if Event.fourth.photo %>
+              <%= cl_image_tag Event.fourth.photo.key, class:"card-event-photo-index"%>
+            <% end %>
+            <h5 class="card-title card-event-title"><%= link_to Event.fourth.event_name, event_path(Event.fourth.id)  %></h5>
+          </div>
+          <div class="col-4">
+            <p class="card-details card-details-text"><%= Event.fourth.event_date %></p>
+            <p class="card-details card-details-text"><%= Event.fourth.event_location%></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+  </div>
+
+
+<svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
+</svg>
+
+<div class="parallax-section parallax2">
+  <div class="container m-4; justify-content:center">
+  <!-- Pricing Section -->
+  <div class="wrap" id="pricing">
+      <div class="grid grid-pad">
+          <div class="content" >
+            <div class="col-1-1">
+              <div id="price-tables">
+                <h1 style="font-size: 1.5em;">Porqué elegir Crowd?</h1>
+                <div id="plans">
+                  <li class="plan col-4">
+                    <ul class="plan-wrap">
+                      <li class="price"><p></p></li>
+                      <li class="title"><a style="color:white;">Variedad</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="plan col-4" >
+                    <ul class="plan-wrap">
+                      <li class="price"><p><i class="fa-solid fa-shield-check"></i></p></li>
+                      <li class="title"><a style="color:white;">Rapidez</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="plan col-4" >
+                    <ul class="plan-wrap">
+                      <li class="price"><p></p></li>
+                      <li class="title"><a style="color:white;">Seguridad</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="plan col-4" >
+                    <ul class="plan-wrap">
+                      <li class="price"><p></p></li>
+                      <li class="title"><a style="color:white;">Confiabilidad</a></li>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+</svg>
