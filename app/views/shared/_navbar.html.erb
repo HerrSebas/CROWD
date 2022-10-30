@@ -6,12 +6,12 @@
 
         <span class="logo-domain">
           <i class="fa-sharp fa-solid fa-people-group"></i>
-          <%= link_to "CROWD", root_path, class: "main-container-navbar logo" %>
+          <%= link_to "Crowd", root_path, class: "main-container-navbar logo" %>
         </span>
 
       </div>
       <% if user_signed_in? %>
-        <span class="welcome-user"> Bienvenido, <%= current_user.name %></span>
+        <span class="welcome-user">Bienvenido, <%= current_user.name %></span>
       <% end %>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
