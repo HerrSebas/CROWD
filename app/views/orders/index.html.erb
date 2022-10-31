@@ -3,10 +3,11 @@
   <ul>
     <li>
       <div class="container bg-dark">
-          <h3>Quantity: <%= order.tickets.first.event.event_name %></h3>
+          <h3>Event: <%= order.tickets.first.event.event_name %></h3>
           <h3>Quantity: <%= order.tickets_quantity %></h3>
           <h3>Purchased at: <%= order.created_at.to_date %></h3>
           <h3>Amount: <%= order.total_price %></h3>
+          <h2><%= link_to "Tickets", order_tickets_path(order) %></h2>
       </div>
     </li>
   </ul>
