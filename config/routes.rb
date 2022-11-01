@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:index, :show] do
-    resources :tickets, only: [:index]
+    resources :tickets, only: [:index, :show]
   end
+
 end

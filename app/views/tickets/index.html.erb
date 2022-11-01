@@ -1,12 +1,6 @@
 <h2> These are your tickets! </h2>
 
-<div class="tickets-container">
-  <div class="ticket-container">
-    <div class="ticket-details">
-      <div class="ticket-detail">this is a ticket detail</div>
-      <div class="ticket-detail">this is another ticket detail</div>
-      <div class="ticket-detail">this is another the last ticket detail</div>
-    </div>
-    <div class="ticket-code">this is the qr code</div>
-  </div>
-</div>
+
+<% @codes.each do |code| %>
+    <div class= "code"><%= code.html_safe %></div>
+<% end %>

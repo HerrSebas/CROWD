@@ -1,11 +1,24 @@
 class TicketsController < ApplicationController
-  before_action :set_event, only: %i[show edit update]
+  before_action :set_ticket, only: %i[show edit update]
 
   def index
     @tickets = Ticket.where(user: current_user)
+    @codes = []
+    @tickets.each do |ticket|
+      code = RQRCode::QRCode.new("localhost:3000/orders/#{ticket.order.id}/tickets/#{ticket.id}")
+      svg = code.as_svg(
+        color: "000",
+        shape_rendering: "crispEdges",
+        module_size: 11,
+        standalone: true,
+        use_path: true
+      )
+      @codes.push(svg)
+    end
   end
 
   def show
+    @ticket = Ticket.find(params[:id])
   end
 
   def new
