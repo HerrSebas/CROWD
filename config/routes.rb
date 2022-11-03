@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pdf/show'
   #ROUTES FOR USERS
   devise_for :users
   root to: "pages#home"
