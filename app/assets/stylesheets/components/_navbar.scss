@@ -72,6 +72,10 @@ h3 {
   padding-left: 30px;
 }
 
+.wrap {
+  width: 100%;
+  padding: 3.5em 0;
+}
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -154,18 +158,6 @@ h4,h5,h6 {
   line-height: .5em;
 }
 */
-
-blockquote {
-  line-height: 1.2em;
-  display: inline-block;
-  margin: 1.3em 0;
-  padding: 2px 20px 0 20px;
-  border-left: 3px solid #e8e8e8;
-}
-
-blockquote p {
-  margin-bottom: 0 !important;
-}
 
 .pleft-25 {
   padding-left: 25px;
@@ -330,21 +322,33 @@ border-radius
   background: #e6e6e6;
 }
 
+.btn-event {
+  margin: 10px;
+  color: rgb(178, 32, 142);
+  border: 2px solid rgb(178, 32, 142);
+  background: transparent;
+}
+
+.btn-event:hover {
+  border-color: transparent;
+  background-color:rgb(178, 32, 142);
+}
+
 .btn-ghost {
   margin: 10px;
   color: #fff;
-  border: 2px solid #fff;
+  border: 2px solid rgb(178, 32, 142);
   background: transparent;
 }
 
 .btn-ghost:hover {
   border-color: transparent;
-  background-color:#1abc9c;
+  background-color:rgb(178, 32, 142);
 }
 
 .btn-ghost-dark {
-  border-color: #1abc9c;
-  color: #1abc9c;
+  border-color: rgb(178, 32, 142);
+  color: rgb(178, 32, 142);
 }
 
 /* *********************************************************
@@ -523,6 +527,11 @@ border-radius
   opacity: 1;
 }
 
+.next-events-btn {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
 /* *********************************************************
   Home Slider
 ********************************************************* */
@@ -563,7 +572,12 @@ border-radius
 }
 
 .parallax2 {
-  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667055905/crowd/Copia_de_Crowd_lfpam8.jpg);
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667273654/crowd/Copia_de_Crowd_lfpam8_1_vapqap.jpg);
+  background-size: cover;
+}
+
+.parallax3 {
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667444945/crowd/stadium-event_kr2b8b.jpg);
   background-size: cover;
 }
 
@@ -578,7 +592,11 @@ border-radius
 
 .parallax2 .content {
   padding-top: 75px;
-  padding-bottom: 20px;
+  padding-bottom: 75px;
+}
+
+.parallax-section3 .content-header, .home-slider .content-header {
+  padding: 50px 0 250px;
 }
 
 .top-slider .content-header {
@@ -610,74 +628,21 @@ border-radius
 }
 
 /* *********************************************************
- Info Counter
-********************************************************* */
-
-.info-counter-icon {
-  font-size: 4em;
-  color: #ffffff;
-}
-
-.info-counter-content, .info-counter-content h5 {
-  color: #fff;
-  font-size: 1.2em;
-}
-
-.info-counter-text {
-  opacity: .7;
-  font-size: 0.8em;
-}
-
-.info-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.info-details-text {
-  justify-content: center;
-  margin-top: 0;
-  margin-bottom: 0rem;
-}
-
-/* *********************************************************
  Pricing
 ********************************************************* */
 
-#plans,#plans ul,#plans ul li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+#cup,#cups ul,#cups ul li {
+  margin: 50px;
+  padding: 50px;
 }
 
-.options li:last-child {
-}
-
-#price-tables:after {
+#cup-tables:after {
   display: table;
   clear: both;
   content: '';
 }
 
-#price-tables {
-  max-width: 69em;
-  margin: 0 auto;
-  text-align: center;
-}
-
-#price-tables #plans .plan {
-  float: left;
-  width: 100%;
-  margin: 0 0 20px 0;
-  text-align: center;
-/*border-radius*/
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-
-.plan-wrap .title h2 {
+.cup-wrap .title h2 {
   font-size: 1.6em;
   font-weight: 300;
   margin: 0;
@@ -686,23 +651,22 @@ border-radius
   ;
 }
 
-.plan-wrap .title h2.best-plan-title {
+.cup-wrap .title h2.best-cup-title {
   color: #ffffff;
   border-bottom: none;
 /*border-radius*/
   -webkit-border-radius: 2px 2px 0 0;
      -moz-border-radius: 2px 2px 0 0;
           border-radius: 2px 2px 0 0;
-  background: #484f58;
 }
 
-.plan-wrap .title h2.best-plan-title,
-.plan-wrap .price p.best-plan-price,
-.plan-wrap .btn-best-plan {
+.cup-wrap .title h2.best-cup-title,
+.cup-wrap .price p.best-cup-price,
+.cup-wrap .btn-best-cup {
   color: #ffffff;
 }
 
-.plan-wrap .price p {
+.cup-wrap .price p {
   font-size: 1.2em;
   font-weight: 700;
   line-height: 120px;
@@ -718,7 +682,7 @@ border-radius
   background: transparent;
 }
 
-.plan-wrap:hover .price p {
+.cup-wrap:hover .price p {
 /*transform*/
   -webkit-transform: scale(1.1);
      -moz-transform: scale(1.1);
@@ -728,31 +692,31 @@ border-radius
 
 }
 
-.plan-wrap .price p.best-plan-price {
+.cup-wrap .price p.best-cup-price {
   border-color: transparent;
   background: #484f58;
 }
 
-.plan-wrap .price p span {
+.cup-wrap .price p span {
   color: #394879;
 }
 
-.plan-wrap .options {
+.cup-wrap .options {
   margin-top: 10em;
 }
 
-.plan-wrap .options li {
+.cup-wrap .options li {
   font-weight: 700;
   line-height: 2.5;
   color: #484f58;
 }
 
-.plan-wrap .options li span {
+.cup-wrap .options li span {
   font-weight: 400;
   color: #979797;
 }
 
-.plan-wrap .button {
+.cup-wrap .button {
   display: inline-block;
   width: 80%;
   margin: 1.5em 0 1.8em;
@@ -763,23 +727,33 @@ border-radius
           border-radius: 5px;
 }
 
-#price-tables {
-  margin: 2em auto;
+.cup-tables {
+  margin: 50px;
+  padding: 50px;
 }
 
-#price-tables #plans .plan {
-  width: 24%;
-  margin: 1.2em 1.33% 20px 0;
+.cup-contain {
+  margin-top: 50px;
+  margin-bottom: 50px !important;
+  display: flex;
+  justify-content: space-between;
 }
 
-#price-tables #plans > li:last-child {
-  margin-right: 0;
+.cup-image {
+  flex: 0 0 calc(33.3%, 1rem);
+  width: 165px;
+  padding: 10px;
 }
 
-#price-tables #plans .best-plan {
-  border-color: #484f58;
+.enjoy-row{
+  display: flex;
 }
 
-.plan-wrap .btn-best-plan {
-  background: #484f58;
+.enjoy-column {
+  flex: 50%;
+  justify-content: center;
+}
+
+.fans-img {
+  width: 60%;
 }
