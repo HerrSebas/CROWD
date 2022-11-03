@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order: <%= @order.id %> | Details</title>
+<meta charset="utf-8">
+</head>
+<body>
+  <h1>Aqui están los destalles de tu orden y tus tickets!</h1>
+  <h2> These are your tickets! </h2>
+    <% @codes.each do |code| %>
+        <div class= "code"><%= code.html_safe %></div>
+    <% end %>
+</body>
+</html>

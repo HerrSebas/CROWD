@@ -7,6 +7,23 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @tickets = @order.tickets
+    @codes = []
+    @tickets.each do |ticket|
+      code = RQRCode::QRCode.new("https://crowd-912.herokuapp.com/orders/#{ticket.order.id}/tickets/#{ticket.id}")
+      svg = code.as_svg(
+        color: "000",
+        shape_rendering: "crispEdges",
+        module_size: 11,
+        standalone: true,
+        use_path: true
+      )
+      @codes.push(svg)
+    end
+    respond_to do |format|
+      format.html
+      format.pdf { render template: "orders/resumen", pdf: "#{@order.id}" }
+    end
   end
 
   def new
@@ -28,7 +45,25 @@ class OrdersController < ApplicationController
         ticket.ticket_price = @event.event_price
         ticket.save
       end
-      mail = OrderMailer.with(user: current_user, order: @order, tickets: @order.tickets).confirmation
+      @tickets = @order.tickets
+      @codes = []
+      @tickets.each do |ticket|
+        code = RQRCode::QRCode.new("https://crowd-912.herokuapp.com/orders/#{ticket.order.id}/tickets/#{ticket.id}")
+        svg = code.as_svg(
+          color: "000",
+          shape_rendering: "crispEdges",
+          module_size: 11,
+          standalone: true,
+          use_path: true
+        )
+        @codes.push(svg)
+      end
+      pdf = WickedPdf.new.pdf_from_string(
+        render_to_string('orders/resumen.pdf.erb', layout: 'pdf.html.erb'),
+      )
+
+      attachment = pdf
+      mail = OrderMailer.with(user: current_user, order: @order, tickets: @order.tickets).confirmation(attachment)
       mail.deliver_now
       redirect_to @order
     else
