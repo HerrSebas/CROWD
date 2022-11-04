@@ -3,11 +3,11 @@
 
     <%= simple_form_for @event do |f| %>
     <%= f.input :event_name %>
-    <%= f.input :event_location %>
+    <%= f.input :address %>
     <%= f.input :event_capacity %>
     <%= f.input :event_date %>
-    <%= f.input :event_latitude %>
-    <%= f.input :event_longitude %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
     <%= f.input :event_price %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "button-sign-up" %>

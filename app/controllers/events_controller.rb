@@ -3,9 +3,22 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
   end
 
   def show
+    @events = Event.all
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
   end
 
   def new
@@ -45,7 +58,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_date, :event_location, :event_capacity, :event_name, :event_latitude, :event_longitude, :event_price, :photo)
+    params.require(:event).permit(:event_date, :address, :event_capacity, :event_name, :event_latitude, :event_longitude, :event_price, :photo)
   end
 
   def set_event

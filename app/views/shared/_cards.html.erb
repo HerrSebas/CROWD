@@ -10,7 +10,7 @@
       <div class="card-description-content">
         <div class="card-description">
           <div class="description"><%= @event.event_date %></div>
-          <div class="description"><%= @event.event_location %></div>
+          <div class="description"><%= @event.address %></div>
           <div class="price">$<%= @event.event_price %></div>
         </div>
         <% if user_signed_in? %>
