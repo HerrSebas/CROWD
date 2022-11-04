@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
         @codes.push(svg)
       end
       pdf = WickedPdf.new.pdf_from_string(
-        render_to_string('orders/resumen.pdf.erb', layout: 'pdf.html.erb'),
+        render_to_string('orders/resumen', layout: 'pdf.html.erb')
       )
 
       attachment = pdf
