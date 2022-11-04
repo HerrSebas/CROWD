@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_29_181445) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_27_005330) do
+=======
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,11 +46,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_181445) do
 
   create_table "events", force: :cascade do |t|
     t.date "event_date"
-    t.string "event_location"
+    t.string "address"
     t.integer "event_capacity"
     t.string "event_name"
-    t.float "event_latitude"
-    t.float "event_longitude"
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "event_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "event_price"
@@ -62,6 +65,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_181445) do
     t.datetime "updated_at", null: false
     t.integer "tickets_quantity"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "selfies", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tickets", force: :cascade do |t|
