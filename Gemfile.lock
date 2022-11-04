@@ -6,6 +6,13 @@ GIT
       actionpack (>= 5.2)
       activemodel (>= 5.2)
 
+GIT
+  remote: https://github.com/pallymore/wkhtmltopdf-binary-edge.git
+  revision: 278b58088851e86808e942e060a3d2a6ff83e492
+  tag: v0.12.2
+  specs:
+    wkhtmltopdf-binary (0.12.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -94,6 +101,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    chunky_png (1.4.0)
     cloudinary (1.23.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
@@ -135,6 +143,10 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -211,6 +223,10 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
+    rqrcode (2.1.2)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.2.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -261,6 +277,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wicked_pdf (2.6.3)
+      activesupport
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.1)
@@ -282,9 +300,11 @@ DEPENDENCIES
   geocoder
   jbuilder
   jsbundling-rails
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  rqrcode
   sassc-rails
   selenium-webdriver
   simple_form!
@@ -294,6 +314,8 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  wicked_pdf
+  wkhtmltopdf-binary!
 
 RUBY VERSION
    ruby 3.1.2p20

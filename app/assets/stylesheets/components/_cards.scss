@@ -4,16 +4,16 @@
   margin: 10px;
 }
 .card-container-background {
-  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1666466829/crowd/estadio_w5bozd.jpg);
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667061902/crowd/dominik-hofbauer-1yLt0422fYQ-unsplash_zgwmd4.jpg) !important;
   background-size: cover;
-  width: 45%;
-  height: 210px;
   border-radius: 8px;
 }
 
 .card-event {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-photo-title {
@@ -55,12 +55,13 @@
 }
 
 .card-event-title {
- font-family: "Righteous";
+ font-family: "Righteous" !important;
  font-size: 20px;
- color: #ffffff;
+ color: #ffffff !important;
  text-align: center;
+ text-transform: uppercase;
  justify-content: center;
- text-decoration: none;
+ text-decoration: none !important;
 }
 
 .title {

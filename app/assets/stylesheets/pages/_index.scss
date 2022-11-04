@@ -2,26 +2,44 @@
 @import "home";
 
 .body {
-  background-color: #d9d9d9;
+  background-color: #ffffff !important;
 }
 
 .row {
   justify-content: space-around;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 130px;
-  grid-gap: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  grid-gap: 15px;
 }
 
 .card.col {
   background: rgba(0, 0, 0, 0.79);
+  background-size: cover;
   width: 381px;
   height: 138px;
   border-radius: 8px;
 }
 
+.col-8{
+  align-items: center;
+}
+
+.card-container-bg {
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667061902/crowd/dominik-hofbauer-1yLt0422fYQ-unsplash_zgwmd4.jpg) !important;
+  background-size: cover;
+  border-radius: 8px;
+  padding-top: 15px;
+}
+
 .card.card-body {
   overflow-wrap: break-word;
+}
+
+.card-event-photo-index {
+  width: 150px;
+  height: 74px;
 }
 
 .card.card-text {
@@ -31,10 +49,15 @@
 }
 
 .card-body.card-details {
-  font-size: 12px;
+  font-size: 8px;
   font-family: 'Roboto', sans-serif;
   width: 94px;
   text-align: center;
+}
+
+.card-details-text {
+  margin-top: 0;
+  margin-bottom: 0rem;
 }
 
 .card-body.card-btn {
@@ -50,4 +73,10 @@ i {
 .search-bar {
   padding-left: 230px;
   padding-right: 230px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Righteous';
 }
