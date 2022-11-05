@@ -8,11 +8,23 @@
   color: rgb(178, 32, 142);
 }
 
+.png {
+  height: 50px;
+}
+
 .navbar-container {
   z-index: 10;
   top: 0;
   width: 100%;
+}
 
+.navbar-lewagon .navbar-brand img {
+  width: 50px;
+}
+
+.navbar-crowd {
+  padding-left: 10px;
+  padding-top: 5px;
 }
 
 .section {
@@ -61,15 +73,20 @@ h3 {
 }
 
 .logo-domain {
+  display: flex;
+  justify-content: space-between;
   font-size: 30px;
   color: #ffffff;
+}
+
+.logo-stadium {
+ align-items: center;
 }
 
 .welcome-user {
   color: rgb(178, 32, 142) !important;
   font-size: 20px !important;
   font-weight: 200;
-  padding-left: 30px;
 }
 
 .wrap {
@@ -352,97 +369,6 @@ border-radius
 }
 
 /* *********************************************************
-  Header
-********************************************************* */
-
-#top-header {
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  padding: 23px 0;
-/*transition*/
-  -webkit-transition: all .15s linear;
-     -moz-transition: all .15s linear;
-       -o-transition: all .15s linear;
-          transition: all .15s linear;
-}
-
-#top-header .grid {
-  overflow: visible;
-}
-
-.logo {
-  display: block;
-  float: left;
-  width: 104px;
-  height: 46px;
-  text-indent: -9999px;
-  background: url(images/logo.svg) no-repeat;
-  background-size: 104px 46px;
-}
-
-.logo:hover, .logo:focus {
-  -webkit-animation: rubberBand 0.5s 1;
-     -moz-animation: rubberBand 0.5s 1;
-       -o-animation: rubberBand 0.5s 1;
-          animation: rubberBand 0.5s 1;
-}
-
-.header-default {
-  background: #2C2D31;
-}
-
-.header-home {
-  background: transparent;
-/*box-shadow*/
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-}
-
-.header-home .navigation a {
-  color: #fff;
-}
-
-.top-slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 750px;
-}
-
-.slider {
-  height: 100%;
-}
-
-.top-slider .content-header {
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-/*transform*/
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.background-video {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 1;
-  overflow: hidden;
-}
-
-/* *********************************************************
   Navigation
 ********************************************************* */
 
@@ -470,15 +396,15 @@ border-radius
 }
 
 .navigation a {
-  font-size: .8em;
+  font-size: 1.2em;
   display: block;
-  margin-left: 20px;
+  margin-left: 50px;
   padding-bottom: 3px;
   color: #fff;
 }
 
 .navigation .current a, .navigation ul li a:hover, .navigation ul li a:focus {
-  color:#1abc9c;
+  color:rgb(178, 32, 142);
 }
 
 .navigation .sub-menu {
@@ -495,7 +421,7 @@ border-radius
        -o-transition: all .1s linear;
           transition: all .1s linear;
   opacity: 0;
-  border-top: 1px solid#1abc9c;
+  border-top: 1px solid rgb(178, 32, 142);
   background: #fff;
 /*box-shadow*/
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
@@ -581,6 +507,11 @@ border-radius
   background-size: cover;
 }
 
+.parallax-event {
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667534476/crowd/event-banner_hfxgsx.png);
+  background-size: cover;
+}
+
 .parallax-section .content, .top-slider .content-header, .home-slider {
   margin: 0 auto;
   text-align: center;
@@ -599,6 +530,12 @@ border-radius
   padding: 50px 0 250px;
 }
 
+.parallax-section4 .content-header, .home-slider .content-header {
+  padding: 50px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .top-slider .content-header {
   padding: 130px 0;
 }
@@ -732,7 +669,7 @@ border-radius
   padding: 50px;
 }
 
-.cup-contain {
+.cup-container {
   margin-top: 50px;
   margin-bottom: 50px !important;
   display: flex;
@@ -740,7 +677,7 @@ border-radius
 }
 
 .cup-image {
-  flex: 0 0 calc(33.3%, 1rem);
+  justify-content: center;
   width: 165px;
   padding: 10px;
 }
@@ -754,6 +691,26 @@ border-radius
   justify-content: center;
 }
 
+.enjoy-text {
+  margin-top: 20%;
+  display: grid;
+  grid-template-columns: 1;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.bg-fans{
+  display:flex;
+  justify-content: center;
+}
+
 .fans-img {
-  width: 60%;
+  margin: 10%;
+  justify-content: center;
+  padding: 10px;
+  width: 70%;
+}
+.stadium-png {
+  width: 90%;
+  align-items:center !important;
 }
