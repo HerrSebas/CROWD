@@ -15,11 +15,9 @@ puts "Creating events_seeds"
   file = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/2_abp7fy.png")
   event = Event.new(
     event_date: "3-3-2023",
-    event_location: "Medellin",
+    address: "Estadio de Fútbol Atanasio Giradot",
     event_capacity: 45000,
     event_name: "Clásico Paisa",
-    event_latitude: "6.25184",
-    event_longitude: "-75.56359",
     event_price: 20
   )
   event.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -28,11 +26,9 @@ puts "Creating events_seeds"
   file2 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/5_mb7mtf.png")
   event2 = Event.new(
     event_date: "3-3-2023",
-    event_location: "Bogotá",
+    address: "Estadio de Fútbol Atanasio Giradot",
     event_capacity: 50000,
     event_name: "Clásico Capitalino",
-    event_latitude: "4.60971",
-    event_longitude: "-74.08175",
     event_price: 20
   )
   event2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -41,11 +37,9 @@ puts "Creating events_seeds"
   file3 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/4_ior6lx.png")
   event3 = Event.new(
     event_date: "3-3-2023",
-    event_location: "Cali",
+    address: "Estadio de Fútbol Atanasio Giradot",
     event_capacity: 40000,
     event_name: "Clásico Valluno",
-    event_latitude: "3.43722",
-    event_longitude: "-76.5225",
     event_price: 20
   )
   event3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
@@ -54,11 +48,9 @@ puts "Creating events_seeds"
   file4 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/3_yqntlo.png")
   event4 = Event.new(
     event_date: "3-3-2023",
-    event_location: "Barranquilla",
+    address: "Estadio de Fútbol Atanasio Giradot",
     event_capacity: 50000,
     event_name: "Clásico Costeño",
-    event_latitude: "10.96854",
-    event_longitude: "-74.78132",
     event_price: 20
   )
   event4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
@@ -67,11 +59,9 @@ puts "Creating events_seeds"
   file5 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311275/CROWD/7_e4mvmo.png")
   event5 = Event.new(
     event_date: "3-3-2023",
-    event_location: "Montería",
+    address: "Estadio de Fútbol Atanasio Giradot",
     event_capacity: 20000,
     event_name: "Clásico Felino",
-    event_latitude: "8.74798",
-    event_longitude: "-75.88143",
     event_price: 10
   )
   event5.photo.attach(io: file5, filename: "nes.png", content_type: "image/png")
@@ -80,11 +70,9 @@ puts "Creating events_seeds"
   file6 = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311275/CROWD/8_an2up2.png")
   event6 = Event.new(
     event_date: "3-3-2023",
-    event_location: "Pasto",
+    address: "Estadio de Fútbol Atanasio Giradot",
     event_capacity: 20000,
     event_name: "Clásico del Cuy",
-    event_latitude: "1.21361",
-    event_longitude: "-77.28111",
     event_price: 10
   )
   event6.photo.attach(io: file6, filename: "nes.png", content_type: "image/png")

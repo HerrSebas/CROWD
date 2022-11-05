@@ -17,10 +17,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  #host: localhost
-  #username: senato
-  #password: house4447
-
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -28,6 +24,10 @@ default: &default
 development:
   <<: *default
   database: CROWD_development
+  host: localhost
+  username: airbnb_clone #se agrego esto
+  password: 1234 #se agrego esto
+  port: 5432 #se agrego esto
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,7 +62,10 @@ development:
 test:
   <<: *default
   database: CROWD_test
-  #host: localhost
+  host: localhost
+  username: airbnb_clone #se agrego esto
+  password: 1234 #se agrego esto
+  port: 5432 #se agrego esto
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -88,4 +91,5 @@ production:
   <<: *default
   database: CROWD_production
   username: CROWD
-  password: <%= ENV["CROWD_DATABASE_PASSWORD"] %>
+  # password: <%= ENV["CROWD_DATABASE_PASSWORD"] %>
+  password: 1234 #se agrego esto

@@ -11,8 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_27_005330) do
-=======
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,12 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_005330) do
     t.string "address"
     t.integer "event_capacity"
     t.string "event_name"
-    t.float "latitude"
-    t.float "longitude"
     t.integer "event_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "event_price"
   end
 
   create_table "orders", force: :cascade do |t|
