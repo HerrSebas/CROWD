@@ -7,6 +7,29 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @tickets = @order.tickets
+    @codes = []
+    @tickets.each do |ticket|
+      code = RQRCode::QRCode.new("https://crowd-912.herokuapp.com/orders/#{ticket.order.id}/tickets/#{ticket.id}")
+      png = code.as_png(
+        bit_depth: 1,
+        border_modules: 4,
+        color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+        color: "black",
+        file: nil,
+        fill: "white",
+        module_px_size: 6,
+        resize_exactly_to: false,
+        resize_gte_to: false,
+        size: 120
+      )
+      IO.binwrite("/tmp/github-qrcode.png", png.to_s)
+      @codes.push(png)
+    end
+    respond_to do |format|
+      format.html
+      format.pdf { render template: "orders/resumen", pdf: "#{@order.id}" }
+    end
   end
 
   def new
@@ -28,6 +51,20 @@ class OrdersController < ApplicationController
         ticket.ticket_price = @event.event_price
         ticket.save
       end
+      @tickets = @order.tickets
+      @codes = []
+      @tickets.each do |ticket|
+        code = RQRCode::QRCode.new("https://crowd-912.herokuapp.com/orders/#{ticket.order.id}/tickets/#{ticket.id}")
+        svg = code.as_svg(
+          color: "000",
+          shape_rendering: "crispEdges",
+          module_size: 11,
+          standalone: true,
+          use_path: true
+        )
+        @codes.push(svg)
+      end
+
       mail = OrderMailer.with(user: current_user, order: @order, tickets: @order.tickets).confirmation
       mail.deliver_now
       redirect_to @order
