@@ -21,7 +21,7 @@
         </div>
         <h1>Total: $<%= @order.total_price %></h1>
         <div class="text-center">
-          <p class="btn btn-primary">Go to pay</p>
+          <%=  link_to "Submit Order", orders_path, class:"btn btn-primary"%>
         </div>
       </div>
     </div>
