@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.body {
+  background-color: #ffffff !important;
+}
+
+.tickets-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+}
+
+.ticket-container-bg {
+  justify-content: space-between;
+  background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667061902/crowd/dominik-hofbauer-1yLt0422fYQ-unsplash_zgwmd4.jpg) !important;
+  background-size: cover;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.card.col {
+  background: rgba(0, 0, 0, 0.79);
+  background-size: cover;
+  width: 381px;
+  height: 138px;
+  border-radius: 8px;
+}
+
+.code {
+  margin: 20px;
+  background-color: #ffffff !important;
+}

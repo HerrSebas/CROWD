@@ -4,6 +4,13 @@ const application = Application.start()
 
 // Configure Stimulus development experience
 application.debug = false
-window.Stimulus   = application
+window.Stimulus = application
 
 export { application }
+
+import { initSelfie } from '../components/selfie';
+document.addEventListener('turbolinks:load', () => {
+  if (document.querySelector('.selfie-video')) {
+    initSelfie();
+  }
+});
