@@ -9,7 +9,9 @@
               <%= search_field_tag :search, params[:search], placeholder: "Search your event...", class: "form-control"%>
                 <div class="input-group-btn">
                   <%= button_tag(type: "button", class: "btn btn-primary") do %>
-                  <i class="fa-solid fa-paper-plane-top"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search color-white" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
                   <% end %>
                 </div>
               </div>
@@ -94,7 +96,7 @@
       </div>
     </div>
     <div class="next-events-btn">
-    <%= link_to "All Events", events_path(Event), class: "btn btn-event" %>
+    <%= link_to "All Events", events_path, class: "btn btn-event" %>
     </div>
   </div>
 
@@ -108,43 +110,46 @@
 
   <div class="wrap" id="cups">
 
-          <div class="content" >
-                <h1 style="font-size: 38px !important; color: #ffffff !important;">Our Tournaments</h1>
+    <div class="content" >
+      <h1 style="font-size: 38px !important; color: #ffffff !important;">Our Tournaments</h1>
 
-                <div id="cup-container">
-                  <img class="cup-image"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667273684/crowd/1200px-BetPlay-Dimayor_logo.svg_yeomva.png">
-                  <img class="cup-image"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667273666/crowd/1200px-libertadores_logo.svg_v6x71l.png">
-                  <img class="cup-image"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667273666/crowd/1200px-Copa-BetPlay-Dimayor_logo.svg_ajuesi.png">
-                </div>
-
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img class="cup-image"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667273684/crowd/1200px-BetPlay-Dimayor_logo.svg_yeomva.png">
+          </div>
+          <div class="col">
+            <img class="cup-image"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667273666/crowd/1200px-libertadores_logo.svg_v6x71l.png">
+          </div>
+          <div class="col">
+            <img class="cup-image"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667273666/crowd/1200px-Copa-BetPlay-Dimayor_logo.svg_ajuesi.png">
           </div>
         </div>
+      </div>
     </div>
-
+  </div>
 </div>
 
 <svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
-                </svg>
+  <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+</svg>
 
-<div class="wrap services-wrap bg-white" id="services">
-  <div classss="enjoy-container">
-    <div class="container-form m-4">
-      <div class="enjoy-row">
+<div class="wrap services-wrap bg-white" id="services" style="padding-top:0 !important;">
+  <div classss="enjoy-container" style="padding-top:0 !important;">
+    <div class="container-form" style="padding-top:0 !important;">
+      <div class="row" style="margin-top:0 !important;">
 
-        <div class="enjoy-column">
-          <div class="enjoy-text" style="margin: 20%;">
-            <h2 style="text-align: center;">ENJOY THE SHOW!</h2>
-            <p style="color: grey !important; text-align: center;">Fast-line entry to every stadium</p>
-            <p style="color: grey !important; text-align: center;">QR Identification in every event</p>
-            <p style="color: grey !important; text-align: center;">Carry your tickets in your phone!</p>
+        <div class="col-6">
+          <div class="enjoy-text">
+            <h2 style="text-align: center;">ENJOY THE SHOW</h2>
+            <a style="color: grey !important; text-align: center;"><strong> Send Violence off the pitch!</strong></a>
+            <p style="color: grey !important; text-align: justify;">Crowd was created to help you book tickets to any event from Colombian Professional Football without searching throughout every team website, in a faster, secure and easy way! Carry your ticket in your phone, avoid long queues and ID theft!</p>
           </div>
-
         </div>
-        <div class="enjoy-column">
+
+        <div class="col">
           <div class="bg-fans">
-            <img class="fans-img"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667361709/crowd/28080-ai_fvj8yn.svg" alt="fans">
+            <img class="fans-img"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667605450/crowd/red-card_qjuljh.png" alt="fans">
           </div>
         </div>
 
