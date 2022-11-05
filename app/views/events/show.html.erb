@@ -34,11 +34,20 @@
           <div class="col"><%= @event.event_date %></div>
           <div class="col"><a style="color: grey !important; text-align: center;"><strong>Capacity:</strong></a></div>
           <div class="col"><%=@event.event_capacity %></div>
+
+        <div class="col"><a style="color: grey !important; text-align: center;"><strong>Location:</strong></a></div>
+        <div class="col"><%= @event.address %></div>
+
         </div>
       </div>
 
       <div class="col-6">
-        Geo Location
+        <div class= "map-show" data-controller="map"
+          id='map'
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-map-markers-value="<%= @markers.to_json %>"
+          <%# style='width: 500px; height: 400px;'> %>>
+        </div>
       </div>
     </div>
 
@@ -64,16 +73,20 @@
     </div>
   </div>
 
+<div class= "container pt-700 bg-white">
+<h2>How many tickets?<%= current_user.name %></h1>
+
+  <%= simple_form_for [@event, @order] do |f| %>
+    <%= f.input :tickets_quantity, label:"Cantidad", input_html:{} %>
+    <%= f.submit :button, label:"BUY" %>
+  <% end %>
+</div>
+
 
 
 </div>
     </div>
-        <div data-controller="map"
-          id='map'
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          data-map-markers-value="<%= @markers.to_json %>"
-          style='width: 500px; height: 400px;'>
-      </div>
+
   </div>
 
 

@@ -12,13 +12,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @events = Event.all
-    #@markers = @events.geocoded.map do |event|
-      {
-        #lat: event.latitude,
-        #lng: event.longitude
-      }
-    #end
+    @event = Event.find(params[:id])
+    @order = Order.new
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude
+      }]
+
   end
 
   def new
