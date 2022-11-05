@@ -1,13 +1,33 @@
-<div class="container bg-dark">
-  <h1>Resumen de tu orden</h1>
-  <ul>
-    <p>Evento: <%= @order.tickets.first.event.event_name %></p>
-    <p>Fecha: <%= @order.tickets.first.event.event_date %></p>
-    <p>Cantidad: <%= @order.tickets.count %></p>
-    <p>Valor: $<%= @order.tickets.first.ticket_price %></p>
-  </ul>
-  <h1>Total: $<%= @order.total_price %></h1>
-  <div class="text-center">
-    <p class="btn btn-primary">Go to pay</p>
+<div class="parallax-section4 parallax-event">
+  <div class="grid grid-pad">
+    <div class="col-1-1" style="vertical-align= center;">
+      <div class="content content-header">
+        <h1>Resumen de tu orden</h1>
+        <div class="order-card">
+          <ul>
+            <li><a style="color: grey !important; text-align: center;"><strong>Event:</strong></a>
+              <%= @order.tickets.first.event.event_name %>
+            </li>
+            <li><a style="color: grey !important; text-align: center;"><strong>Date:</strong></a>
+              <%=@order.tickets.first.event.event_date %>
+            </li>
+            <li><a style="color: grey !important; text-align: center;"><strong>Tickets:</strong></a>
+              <%=@order.tickets.count%>
+            </li>
+            <li><a style="color: grey !important; text-align: center;"><strong>Price:</strong></a>
+              <%=@order.tickets.first.ticket_price%>
+            </li>
+          </ul>
+        </div>
+        <h1>Total: $<%= @order.total_price %></h1>
+        <div class="text-center">
+          <p class="btn btn-primary">Go to pay</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+</svg>
