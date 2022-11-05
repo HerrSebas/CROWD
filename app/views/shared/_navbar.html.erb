@@ -12,9 +12,7 @@
       </div>
 
 
-      <% if user_signed_in? %>
-        <a class="welcome-user">Bienvenido, <%= current_user.name.capitalize %></a>
-      <% end %>
+
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,6 +32,7 @@
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Profile", pages_profile_path, class: "dropdown-item" %>
                 <%= link_to "Events", events_path, class: "dropdown-item" %>
+                <%= link_to "Orders", orders_path, class: "dropdown-item" %>
                 <% if current_user.admin? %>
                   <%= link_to "Create event", new_event_path, class: "dropdown-item" %>
                 <% end %>
