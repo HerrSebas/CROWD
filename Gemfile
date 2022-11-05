@@ -50,7 +50,7 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # Use Sass to process CSS
 gem "sassc-rails"
-
+gem 'google-qr', '~> 0.2.2'
 gem 'rqrcode'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

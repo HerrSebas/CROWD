@@ -11,14 +11,20 @@ class OrdersController < ApplicationController
     @codes = []
     @tickets.each do |ticket|
       code = RQRCode::QRCode.new("https://crowd-912.herokuapp.com/orders/#{ticket.order.id}/tickets/#{ticket.id}")
-      svg = code.as_svg(
-        color: "000",
-        shape_rendering: "crispEdges",
-        module_size: 11,
-        standalone: true,
-        use_path: true
+      png = code.as_png(
+        bit_depth: 1,
+        border_modules: 4,
+        color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+        color: "black",
+        file: nil,
+        fill: "white",
+        module_px_size: 6,
+        resize_exactly_to: false,
+        resize_gte_to: false,
+        size: 120
       )
-      @codes.push(svg)
+      IO.binwrite("/tmp/github-qrcode.png", png.to_s)
+      @codes.push(png)
     end
     respond_to do |format|
       format.html
@@ -58,12 +64,8 @@ class OrdersController < ApplicationController
         )
         @codes.push(svg)
       end
-      pdf = WickedPdf.new.pdf_from_string(
-        render_to_string('orders/resumen', layout: 'pdf.html.erb')
-      )
 
-      attachment = pdf
-      mail = OrderMailer.with(user: current_user, order: @order, tickets: @order.tickets).confirmation(attachment)
+      mail = OrderMailer.with(user: current_user, order: @order, tickets: @order.tickets).confirmation
       mail.deliver_now
       redirect_to @order
     else
