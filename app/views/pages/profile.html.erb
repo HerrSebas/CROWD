@@ -7,9 +7,9 @@
             <%# <img class="img-fluid" src="https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg" alt="Card image cap"> %>
         </div>
         <div class="card-body pt-5">
-            <%= cl_image_tag current_user.photo.key, class:"profile"  %>
-            <h5 class="card-title text-center"><%= current_user.name + " " + current_user.last_name %></h5>
-            <p class="card-text text-center">You are a distinguished soccer fan.</p>
+            <%= cl_image_tag current_user.photo.key, class:"profile"%>
+            <h5 class="card-title text-center pb-2"><%= current_user.name + " " + current_user.last_name %></h5>
+            <p class="card-text text-center ">You are a distinguished soccer fan.</p>
             <li class="py-2"><strong> Identification: </strong> <%= current_user.identification_number %></li>
             <li class="py-2"><strong> Email: </strong> <%= current_user.email %></li>
         </div>

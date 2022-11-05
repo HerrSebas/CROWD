@@ -38,6 +38,7 @@ li {
   top: -62px;
   left: 50%;
   width: 100px;
+  height: 100px;
   border: 3px solid rgba(255, 255, 255, 1);
   margin-left: -50px;
 }
@@ -68,12 +69,16 @@ li {
 
 .profile-card-4 h5 {
   font-weight: 600;
-  color: #d90be1;
+  color: #B2208E;
 }
 
 .profile-card-4 .card-text {
   font-weight: 300;
   font-size: 15px;
+}
+
+.profile-card-4 .py-2 {
+  color: #FFF0FA;
 }
 
 .profile-card-4 .icon-block {
@@ -88,9 +93,9 @@ li {
 .profile-card-4 i {
   display: inline-block;
   font-size: 16px;
-  color: #d90be1;
+  color: #B2208E;
   text-align: center;
-  border: 1px solid #d90be1;
+  border: 1px solid #B2208E;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -99,6 +104,6 @@ li {
 }
 
 .profile-card-4 i:hover {
-  background-color: #d90be1;
+  background-color: #B2208E;
   color: #fff;
 }
