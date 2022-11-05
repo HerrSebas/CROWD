@@ -18,7 +18,6 @@ puts "Creating events_seeds"
     address: "Medellin",
     event_capacity: 45000,
     event_name: "Clásico Paisa",
-
     event_price: 20
   )
   event.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
