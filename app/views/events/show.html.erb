@@ -38,7 +38,12 @@
       </div>
 
       <div class="col-6">
-        Geo Location
+        <div class= "map-show" data-controller="map"
+          id='map'
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-map-markers-value="<%= @markers.to_json %>"
+          <%# style='width: 500px; height: 400px;'> %>>
+        </div>
       </div>
     </div>
 
@@ -68,12 +73,7 @@
 
 </div>
     </div>
-        <div data-controller="map"
-          id='map'
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          data-map-markers-value="<%= @markers.to_json %>"
-          style='width: 500px; height: 400px;'>
-      </div>
+
   </div>
 
 
