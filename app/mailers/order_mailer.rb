@@ -21,7 +21,6 @@ class OrderMailer < ApplicationMailer
       )
       @codes.push(png)
     end
-    attachments.inline["logo.pdf"] = File.read("#{Rails.root}/app/views/tickets/index.html.erb")
     mail(to: @user.email, subject: "Order details")
   end
 end

@@ -1,0 +1,16 @@
+.ticket-container {
+  padding: 12px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  background-color: #212529;
+  background-size: cover;
+  background-position: center;
+  width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  li {
+    color: aliceblue;
+    font-weight: bold;
+  }
+}
