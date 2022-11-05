@@ -98,8 +98,13 @@
   background-position: center;
 }
 
-.order-details {
+.order-card {
   display: flex;
   justify-content: center;
-  color: white
+  color: white;
+
+  li {
+    font-size: 27px;
+  }
+
 }

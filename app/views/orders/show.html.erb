@@ -1,36 +1,30 @@
 <div class="parallax-section4 parallax-event">
   <div class="grid grid-pad">
-      <div class="col-1-1" style="vertical-align= center;">
-            <div class="content content-header">
-
-              <h1>Resumen de tu orden</h1>
-
-      <div class="order-card">
-        <ul>
-          <li><a style="color: grey !important; text-align: center;"><strong>Event:</strong></a>
-            <%= @order.tickets.first.event.event_name %>
-          </li>
-          <li><a style="color: grey !important; text-align: center;"><strong>Date:</strong></a>
-            <%=@order.tickets.first.event.event_date %>
-          </li>
-          <li><a style="color: grey !important; text-align: center;"><strong>Tickets:</strong></a>
-            <%=@order.tickets.count%>
-          </li>
-          <li><a style="color: grey !important; text-align: center;"><strong>Price:</strong></a>
-            <%=@order.tickets.first.ticket_price%>
-          </li>
-        </ul>
+    <div class="col-1-1" style="vertical-align= center;">
+      <div class="content content-header">
+        <h1>Resumen de tu orden</h1>
+        <div class="order-card">
+          <ul>
+            <li><a style="color: grey !important; text-align: center;"><strong>Event:</strong></a>
+              <%= @order.tickets.first.event.event_name %>
+            </li>
+            <li><a style="color: grey !important; text-align: center;"><strong>Date:</strong></a>
+              <%=@order.tickets.first.event.event_date %>
+            </li>
+            <li><a style="color: grey !important; text-align: center;"><strong>Tickets:</strong></a>
+              <%=@order.tickets.count%>
+            </li>
+            <li><a style="color: grey !important; text-align: center;"><strong>Price:</strong></a>
+              <%=@order.tickets.first.ticket_price%>
+            </li>
+          </ul>
+        </div>
+        <h1>Total: $<%= @order.total_price %></h1>
+        <div class="text-center">
+          <p class="btn btn-primary">Go to pay</p>
+        </div>
       </div>
-
-    <h1>Total: $<%= @order.total_price %></h1>
-    <div class="text-center">
-      <p class="btn btn-primary">Go to pay</p>
     </div>
-  </div>
-</div>
-
-          </div>
-      </div>
   </div>
 </div>
 
