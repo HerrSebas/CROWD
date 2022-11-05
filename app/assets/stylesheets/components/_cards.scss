@@ -3,6 +3,7 @@
 .card-container {
   margin: 10px;
 }
+
 .card-container-background {
   background-image: url(https://res.cloudinary.com/dbnrwssis/image/upload/v1667061902/crowd/dominik-hofbauer-1yLt0422fYQ-unsplash_zgwmd4.jpg) !important;
   background-size: cover;
@@ -38,34 +39,34 @@
   height: 148px;
 }
 
-.card-description{
+.card-description {
   margin: 5px;
 }
 
 .description {
   text-align: center;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .price {
   font-family: "Righteous";
   text-align: center;
-  color:#ffffff;
+  color: #ffffff;
   font-size: 20px;
 }
 
 .card-event-title {
- font-family: "Righteous" !important;
- font-size: 20px;
- color: #ffffff !important;
- text-align: center;
- text-transform: uppercase;
- justify-content: center;
- text-decoration: none !important;
+  font-family: "Righteous" !important;
+  font-size: 20px;
+  color: #ffffff !important;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+  text-decoration: none !important;
 }
 
 .title {
- justify-content: center;
+  justify-content: center;
 }
 
 .btn-buy {
@@ -90,8 +91,15 @@
 .btn-spicing {
   margin-top: 20px;
 }
+
 .container-home {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.order-details {
+  display: flex;
+  justify-content: center;
+  color: white
 }
