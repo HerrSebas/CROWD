@@ -1,6 +1,11 @@
-<h1>Order#confirmation</h1>
+<h1>Order confirmation</h1>
 
 <p>
+  Hi <%= @user.name %>, thank you for your trust!
   Here are your tickets from order <%= @order.id %>
+  to <%= @order.tickets.first.event.event_name %>
+  Visit the link below to view your tickets: <%= "" %>
 </p>
-<h2> These are your tickets! </h2>
+<h2>
+  <a href=<%= "http://localhost:3000/orders/#{@order.id}/tickets" %>>These are your tickets!</a>
+</h2>
