@@ -1,10 +1,10 @@
 <div class="container bg-dark">
-  <h1>Resumen de tu orden</h1>
+  <h1>Order summary</summary></h1>
   <ul>
-    <p>Evento: <%= @order.tickets.first.event.event_name %></p>
-    <p>Fecha: <%= @order.tickets.first.event.event_date %></p>
-    <p>Cantidad: <%= @order.tickets.count %></p>
-    <p>Valor: $<%= @order.tickets.first.ticket_price %></p>
+    <p>Event: <%= @order.tickets.first.event.event_name %></p>
+    <p>Date: <%= @order.tickets.first.event.event_date %></p>
+    <p>Amount: <%= @order.tickets.count %></p>
+    <p>Price: $<%= @order.tickets.first.ticket_price %></p>
   </ul>
   <h1>Total: $<%= @order.total_price %></h1>
   <div class="text-center">

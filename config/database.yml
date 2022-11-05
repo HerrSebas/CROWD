@@ -25,7 +25,7 @@ development:
   <<: *default
   database: CROWD_development
   host: localhost
-  username: airbnb_clone #se agrego esto
+  username: crowd #se agrego esto
   password: 1234 #se agrego esto
   port: 5432 #se agrego esto
 
@@ -63,7 +63,7 @@ test:
   <<: *default
   database: CROWD_test
   host: localhost
-  username: airbnb_clone #se agrego esto
+  username: crowd #se agrego esto
   password: 1234 #se agrego esto
   port: 5432 #se agrego esto
 
