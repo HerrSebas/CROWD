@@ -1,11 +1,23 @@
-<h1>Order confirmation</h1>
+<tr>
+  <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+    <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+      <!-- Body content -->
+      <tr>
+        <td class="content-cell">
+          <div class="f-fallback">
+            <h1>Hi <%= @user.name %>, thank you for your trust!</h1>
+            <!-- Action -->
+            <h3>Here are your tickets from order <%= @order.id %> to <%= @order.tickets.first.event.event_name %></h3>
+            <p>Visit the link below to view your tickets:</p>
 
-<p>
-  Hi <%= @user.name %>, thank you for your trust!
-  Here are your tickets from order <%= @order.id %>
-  to <%= @order.tickets.first.event.event_name %>
-  Visit the link below to view your tickets: <%= "" %>
-</p>
-<h2>
-  <a href=<%= "http://localhost:3000/orders/#{@order.id}/tickets" %>>These are your tickets!</a>
-</h2>
+            <div class="">
+              <a class="button button--green" href=<%= "http://localhost:3000/orders/#{@order.id}/tickets"%>>These are your tickets! </a>
+            </div>
+
+            <p>Si el boton no funciona puedes acceder a traves de este <a href=<%= "http://localhost:3000/orders/#{@order.id}/tickets" %>>These are your tickets!</a></p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
