@@ -2,7 +2,8 @@ class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[show edit update]
 
   def index
-    @tickets = Ticket.where(user: current_user)
+    @order = Order.find(params[:order_id])
+    @tickets = @order.tickets
     @codes = []
     @tickets.each do |ticket|
       code = RQRCode::QRCode.new("https://crowd-912.herokuapp.com/orders/#{ticket.order.id}/tickets/#{ticket.id}")

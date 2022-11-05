@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.float :latitude
       t.float :longitude
       t.integer :event_price
-
       t.timestamps
     end
   end
