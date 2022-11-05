@@ -8,7 +8,7 @@
         </div>
         <div class="card-body pt-5">
             <%= cl_image_tag current_user.photo.key, class:"profile"  %>
-            <h5 class="card-title text-center"><%= current_user.name + current_user.last_name %></h5>
+            <h5 class="card-title text-center"><%= current_user.name + " " + current_user.last_name %></h5>
             <p class="card-text text-center">You are a distinguished soccer fan.</p>
             <li class="py-2"><strong> Identification: </strong> <%= current_user.identification_number %></li>
             <li class="py-2"><strong> Email: </strong> <%= current_user.email %></li>

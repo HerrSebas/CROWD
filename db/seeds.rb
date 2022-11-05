@@ -10,7 +10,7 @@ puts "Destoying all events"
 Event.destroy_all
 
 require "open-uri"
-puts "Creating evets_seeds"
+puts "Creating events_seeds"
 
   file = URI.open("https://res.cloudinary.com/dskpu0jqu/image/upload/v1666311274/CROWD/2_abp7fy.png")
   event = Event.new(
@@ -91,3 +91,32 @@ puts "Creating evets_seeds"
   event6.save
 
 puts "6 events_seeds have been created"
+
+puts "Destoying all users"
+User.destroy_all
+
+user_one = User.new(
+  email: "user_one@test.com",
+  password: "123456",
+  name: "Manuela",
+  last_name: "Torres",
+  identification_number: "3457889",
+  admin: false
+)
+photo_one = URI.open("https://res.cloudinary.com/drou5v6v6/image/upload/v1664644361/development/quhnhg9qdvjdp38bica4mgne2kwd.jpg")
+user_one.photo.attach(io: photo_one, filename: "nes.png", content_type: "image/png")
+user_one.save
+
+user_two = User.new(
+  email: "user_two@test.com",
+  password: "123456",
+  name: "Sebastian",
+  last_name: "Naranjo",
+  identification_number: "3434589",
+  admin: true
+)
+photo_two = URI.open("https://res.cloudinary.com/drou5v6v6/image/upload/v1667146298/development/WhatsApp_Image_2022-10-12_at_8.14.43_PM_pyewyv.jpg")
+user_two.photo.attach(io: photo_two, filename: "nes.png", content_type: "image/png")
+user_two.save
+
+puts "2 users_seeds have been created"
