@@ -7,8 +7,8 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        info_window: render_to_string(partial: "popup", locals:{ event: event})
-        # image_url: helpers.asset_url("https://pic.onlinewebfonts.com/svg/img_1091.png")
+        info_window: render_to_string(partial: "popup", locals:{ event: event}),
+        image_url: helpers.asset_url("black_marker.png")
       }
     end
   end

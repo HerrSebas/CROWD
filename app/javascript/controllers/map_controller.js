@@ -35,8 +35,14 @@ export default class extends Controller {
 
   #addMakersToMap() {
     this.markersValue.forEach((marker) => {
+      const customMarker = document.createElement('div')
+      customMarker.style.height = "30px"
+      customMarker.style.width = "20px"
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      new mapboxgl.Marker()
+      new mapboxgl.Marker({ element: customMarker })
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(this.map);
