@@ -8,8 +8,8 @@
           <div class="card-event">
             <div class="col-5">
 
-              <%# <% if @event.photo %>
-                <%# <%= cl_image_tag @event.photo.key, class:"card-event-photo-index"%>
+              <%# <% if @order.tickets.first.event.photo %> An image here
+                <%# <%= cl_image_tag @order.photo.key, class:"card-event-photo-index"%>
               <%# <% end %>
 
               <h5 class="card-title card-event-title"></h5>
@@ -19,7 +19,7 @@
               <h4 class="card-details card-details-text">Event: <%= order.tickets.first.event.event_name %></h4>
               <h4 class="card-details card-details-text">Quantity: <%= order.tickets_quantity %></h4>
               <h4 class="card-details card-details-text">Purchased at: <%= order.created_at.to_date %></h4>
-              <h4 class="card-details card-details-text">Amount: <%= order.total_price %></h4>
+              <h4 class="card-details card-details-text">Amount: <%= order.total_price %>$</h4>
               <h2><%= link_to "Tickets", order_tickets_path(order) %></h2>
             </div>
 

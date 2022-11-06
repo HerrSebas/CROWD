@@ -11,7 +11,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      style: 'mapbox://styles/mapbox/light-v10', // style URL
       //center: [-74.5, 40], // starting position [lng, lat]
       //zoom: 9, // starting zoom
       //projection: 'globe' // display the map as a 3D globe
@@ -35,8 +35,10 @@ export default class extends Controller {
 
   #addMakersToMap() {
     this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(this.map);
     })
   }
