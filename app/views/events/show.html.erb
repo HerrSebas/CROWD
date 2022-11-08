@@ -58,7 +58,7 @@
 
         <div class="col-sm">
           <div class= "container pt-700 bg-white">
-            <a><strong>How many tickets <%= current_user.name %>?</strong></a>
+            <a><strong>How many tickets, <%= current_user.name %>?</strong></a>
             <%= simple_form_for [@event, @order] do |f| %>
             <%= f.input :tickets_quantity, label:"Quantity", input_html:{} %>
           </div>

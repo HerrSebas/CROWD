@@ -19,7 +19,6 @@ class EventsController < ApplicationController
         lat: @event.latitude,
         lng: @event.longitude
       }]
-
   end
 
   def new

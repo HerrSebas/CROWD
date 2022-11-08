@@ -5,7 +5,6 @@ class CreateTickets < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
       t.references :order, null: false, foreign_key: true
       t.integer :ticket_price
-
       t.timestamps
     end
   end

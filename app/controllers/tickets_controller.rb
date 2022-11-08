@@ -20,6 +20,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+    @orders = @ticket.orders
   end
 
   def new
@@ -30,7 +31,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    @event = Event.find(params[:flat_id])
+    @event = Event.find(params[:event_id])
     @ticket.event = @event
     @ticket.user = current_user
     authorize @ticket
