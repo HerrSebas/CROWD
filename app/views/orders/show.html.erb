@@ -2,27 +2,10 @@
   <div class="grid grid-pad">
     <div class="col-1-1" style="vertical-align= center;">
       <div class="content content-header">
-        <h1>Resumen de tu orden</h1>
-        <div class="order-card">
-          <ul>
-            <li><a style="color: grey !important; text-align: center;"><strong>Event:</strong></a>
-              <%= @order.tickets.first.event.event_name %>
-            </li>
-            <li><a style="color: grey !important; text-align: center;"><strong>Date:</strong></a>
-              <%=@order.tickets.first.event.event_date %>
-            </li>
-            <li><a style="color: grey !important; text-align: center;"><strong>Tickets:</strong></a>
-              <%=@order.tickets.count%>
-            </li>
-            <li><a style="color: grey !important; text-align: center;"><strong>Price:</strong></a>
-              <%=@order.tickets.first.ticket_price%>
-            </li>
-          </ul>
-        </div>
-        <h1>Total: $<%= @order.total_price %></h1>
-        <div class="text-center">
-          <%=  link_to "Submit Order", orders_path, class:"btn btn-primary"%>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16" style="color:white;">
+          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+        </svg>
+        <h1>Event successfully booked!</h1>
       </div>
     </div>
   </div>
@@ -30,4 +13,33 @@
 
 <svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
   <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+</svg>
+
+<div class="container container-fluid">
+
+  <h2 class="text-center">SUMMARY</h2>
+
+  <div class="row" style="grid-gap: 0!important; padding: 0% !important; justify-content:center !important; margin-top: 3%; ">
+  <div class="col-4" style="vertical-align: middle !important; grid-gap: 0!important; ">
+    <div class="row row-cols-2" style="grid-gap: 0px; !important; padding: 0% !important; justify-content:center !important; border: 3px solid #dee3e4; border-radius: 18px;">
+      <div class="col"><h4 style="color: grey !important; text-align: left;"><strong>Event:</strong></h4></div>
+      <div class="col" style="text-align: right;"><h4><%= @order.tickets.first.event.event_name %></h4></div>
+      <div class="col"><h4 style="color: grey !important; text-align: left;"><strong>Tickets:</strong></h4></div>
+      <div class="col" style="text-align: right;"><h4><%= @order.tickets_quantity %></h4></div>
+      <div class="col"><h4 style="color: grey !important; text-align: left;"><strong>Purchased:</strong></h4></div>
+      <div class="col" style="text-align: right;"><h4><%= @order.created_at.to_date %></h4></div>
+    </div>
+  </div>
+
+  <h2 class="text-center mt-4">TOTAL: $<%= @order.total_price %></h2>
+  </div>
+
+  <div class="text-center mt-4">
+      <%=  link_to "Submit Order", orders_path, class:"btn btn-primary"%>
+    </div>
+
+</div>
+
+<svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
 </svg>
