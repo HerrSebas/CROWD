@@ -3,21 +3,21 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    #@markers = @events.geocoded.map do |event|
+    @markers = @events.geocoded.map do |event|
       {
-        #lat: event.latitude,
-        #lng: event.longitude
+        lat: event.latitude,
+        lng: event.longitude
       }
-    #end
+    end
   end
 
   def show
     @event = Event.find(params[:id])
     @order = Order.new
-    #@markers =
+    @markers =
       [{
-        #lat: @event.latitude,
-        #lng: @event.longitude
+        lat: @event.latitude,
+        lng: @event.longitude
       }]
   end
 
