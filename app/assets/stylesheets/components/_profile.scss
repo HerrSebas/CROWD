@@ -1,5 +1,5 @@
 .container-profile {
-  background-image: url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
+  //background-image: url("https://w0.peakpx.com/wallpaper/515/792/HD-wallpaper-stadium-stands-seats-sports-black-and-white.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,9 +11,10 @@
 }
 
 .card {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.159);
+  border: 3px solid #dee3e4;
+  border-radius: 18px;
 }
 
 .profile-card-4 .card-img-block {
@@ -39,7 +40,7 @@ li {
   left: 50%;
   width: 100px;
   height: 100px;
-  border: 3px solid rgba(255, 255, 255, 1);
+  border: 3px solid #B2208E;
   margin-left: -50px;
 }
 
@@ -65,6 +66,7 @@ li {
   opacity: 1;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  font-weight: 600;
 }
 
 .profile-card-4 h5 {
@@ -75,10 +77,11 @@ li {
 .profile-card-4 .card-text {
   font-weight: 300;
   font-size: 15px;
+  color:  black;
 }
 
 .profile-card-4 .py-2 {
-  color: #FFF0FA;
+  color: black;
 }
 
 .profile-card-4 .icon-block {
@@ -105,5 +108,5 @@ li {
 
 .profile-card-4 i:hover {
   background-color: #B2208E;
-  color: #fff;
+  color: black;
 }
