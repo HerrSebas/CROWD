@@ -1,60 +1,58 @@
 <div class="navbar-container">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon .navbar-expand{-sm|-md|-lg|-xl}">
 
     <div class="container-fluid">
 
-      <div class="logo-domain">
-        <div class="logo-stadium">
-          <%= link_to root_path do %>
-            <%= image_tag 'https://res.cloudinary.com/dbnrwssis/image/upload/v1666466796/crowd/crowd-logo_y6dups.png', class: "png" %>
-          <% end %>
+      <div class="col">
+        <div class="logo-domain">
+          <div class="logo-stadium">
+            <%= link_to root_path do %>
+              <%= image_tag 'https://res.cloudinary.com/dbnrwssis/image/upload/v1666466796/crowd/crowd-logo_y6dups.png', class: "png" %>
+            <% end %>
+          </div>
         </div>
       </div>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <%if user_signed_in? %>
 
+              <li class="nav-item dropdown">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <%if user_signed_in? %>
-
-            <li class="nav-item dropdown">
-
-              <% if current_user.photo.present? %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-user-image-179582665.jpg" />
-              <% end %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", pages_profile_path, class: "dropdown-item" %>
-                <%= link_to "Events", events_path, class: "dropdown-item" %>
-                <%= link_to "Orders", orders_path, class: "dropdown-item" %>
-                <% if current_user.admin? %>
-                  <%= link_to "Create event", new_event_path, class: "dropdown-item" %>
+                <% if current_user.photo.present? %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-user-image-179582665.jpg" />
                 <% end %>
-                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Sign In", new_user_registration_path, class: "nav-link navlink-color" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log In", new_user_session_path, class: "nav-link navlink-color" %>
-            </li>
-            <li class="nav-item active pt-2">
-              <%= link_to root_path, class: "nav-link navlink-color" do %>
-                <!--<i class="fa-sharp fa-solid fa-earth-americas"></i>-->
-                <% end %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "Profile", pages_profile_path, class: "dropdown-item" %>
+                  <%= link_to "Events", events_path, class: "dropdown-item" %>
+                  <%= link_to "Orders", orders_path, class: "dropdown-item" %>
+                  <% if current_user.admin? %>
+                    <%= link_to "Create event", new_event_path, class: "dropdown-item" %>
+                  <% end %>
+                  <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Sign In", new_user_registration_path, class: "nav-link navlink-color" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Log In", new_user_session_path, class: "nav-link navlink-color" %>
+              </li>
+              <li class="nav-item active pt-2">
+                <%= link_to root_path, class: "nav-link navlink-color" do %>
+                  <!--<i class="fa-sharp fa-solid fa-earth-americas"></i>-->
+                  <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
   </div>
 </div>
 
