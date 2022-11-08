@@ -5,7 +5,15 @@
   background-color: #ffffff !important;
 }
 
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+  }
+}
+
 .row {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-left: 50px;
   padding-right: 50px;
@@ -71,8 +79,8 @@ i {
 }
 
 .search-bar {
-  padding-left: 230px;
-  padding-right: 230px;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 a {

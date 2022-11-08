@@ -1,15 +1,15 @@
 <div class="parallax-section4 parallax-event">
   <div class="grid grid-pad">
-      <div class="col-1-1" style="vertical-align= center;">
-            <div class="content content-header">
-              <div>
-                <% if @event.photo %>
-                  <%= cl_image_tag @event.photo.key, class:"card-event-photo"%>
-                <% end %>
-              </div>
-              <h1 class="mx-width"><%= @event.event_name%></h1>
-          </div>
+    <div class="col-1-1" style="vertical-align= center;">
+      <div class="content content-header">
+        <div>
+          <% if @event.photo %>
+            <%= cl_image_tag @event.photo.key, class:"card-event-photo"%>
+          <% end %>
+        </div>
+        <h1 class="mx-width"><%= @event.event_name%></h1>
       </div>
+    </div>
   </div>
 </div>
 
@@ -17,31 +17,30 @@
   <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
 </svg>
 
-<div class="container">
+<div class="container container-fluid">
 
   <div class="row" style="grid-gap:0 !important; padding: 1% !important;">
 
-    <div class="row" style="grid-gap: 0!important; padding: 1% !important; align-items:center !important;">
+    <div class="row" style="grid-gap: 0!important; padding: 1% !important; align-items:center !important; border: 3px solid #dee3e4; border-radius: 18px;">
 
-      <div class="col" style="align-items:center !important;" >
+      <div class="col-sm" style="align-items:center !important;" >
         <img class="stadium-png"src="https://res.cloudinary.com/dbnrwssis/image/upload/v1667346251/crowd/stadium_content_q2umzf.png" alt="stadium-iso">
-        <p> Location: <%=@event.address %> </p>
       </div>
 
-      <div class="col" style="vertical-align: middle !important;">
+      <div class="col-sm" style="vertical-align: middle !important;">
         <div class="row row-cols-2" style="grid-gap:0 !important; padding: 1% !important;">
-          <div class="col"><a style="color: grey !important; text-align: center;"><strong>Date:</strong></a></div>
-          <div class="col"><%= @event.event_date %></div>
-          <div class="col"><a style="color: grey !important; text-align: center;"><strong>Capacity:</strong></a></div>
-          <div class="col"><%=@event.event_capacity %></div>
+          <div class="col-sm"><a style="color: grey !important; text-align: center;"><strong>Date:</strong></a></div>
+          <div class="col-sm"><%= @event.event_date %></div>
+          <div class="col-sm"><a style="color: grey !important; text-align: center;"><strong>Capacity:</strong></a></div>
+          <div class="col-sm"><%=@event.event_capacity %> people</div>
 
-        <div class="col"><a style="color: grey !important; text-align: center;"><strong>Location:</strong></a></div>
-        <div class="col"><%= @event.address %></div>
+          <div class="col-sm"><a style="color: grey !important; text-align: center;"><strong>Location:</strong></a></div>
+          <div class="col-sm"><%= @event.address %></div>
 
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-sm-6">
         <div class= "map-show" data-controller="map"
           id='map'
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
@@ -51,43 +50,33 @@
       </div>
     </div>
 
-  <div class="container">
-  <div class="row" style="grid-gap: 0!important; padding: 1% !important; align-items:center !important;">
-    <div class="col">
-      $<%= @event.event_price %>
-    </div>
-    <div class="col">
-      <% if user_signed_in? %>
-              <button type="text-center" class="btn btn-primary">
-              <h2><%= link_to "BUY", new_event_order_path(@event), class:"btn-primary"%></h2>
-              </button>
-          <% else %>
-            <a>Log in to buy tickets</a>
+  <div class="container container-fluid">
+    <div class="row" style="grid-gap: 0!important; padding: 1% !important; align-items:center !important; border: 3px solid #dee3e4; border-radius: 18px; margin-top: 3%;">
+        <div class="col-sm">
+          <h2 style="text-align: center;">$<%= @event.event_price %></h2>
+        </div>
+
+        <div class="col-sm">
+          <div class= "container pt-700 bg-white">
+            <a><strong>How many tickets <%= current_user.name %>?</strong></a>
+            <%= simple_form_for [@event, @order] do |f| %>
+            <%= f.input :tickets_quantity, label:"Quantity", input_html:{} %>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-6" style="display: contents !important;">
+          <%= f.button :submit, "Book a ticket!", class:"btn btn-event" %>
           <% end %>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-sm-4">
+        </div>
+      </div>
 
       </div>
     </div>
   </div>
 
-<div class= "container pt-700 bg-white">
-<h2>How many tickets?<%= current_user.name %></h1>
-
-  <%= simple_form_for [@event, @order] do |f| %>
-    <%= f.input :tickets_quantity, label:"Cantidad", input_html:{} %>
-    <%= f.submit :button, label:"BUY" %>
-  <% end %>
 </div>
-
-
-
-</div>
-    </div>
-
-  </div>
 
 
 <svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
