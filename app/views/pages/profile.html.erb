@@ -39,10 +39,15 @@
         <div class="card-body pt-5">
           <h5 class="card-title text-center"> My orders</h5>
           <p class="card-text text-center">You have gone to:</p>
+        <% if current_user.orders.length < 2 %>
+          <li class="py-2"><strong> Order 1 </strong></li>
+          <%= current_user.orders.first.tickets.first.event.event_name %>
+        <% else %>
           <li class="py-2"><strong> Order 1 </strong></li>
           <%= current_user.orders.first.tickets.first.event.event_name %>
           <li class="py-2"><strong> Order 2 </strong></li>
           <%= current_user.orders.second.tickets.first.event.event_name %>
+        <% end %>
         </div>
       </div>
     </div>
