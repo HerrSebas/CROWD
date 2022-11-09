@@ -3,7 +3,7 @@
     <div class="col-1-1" style="vertical-align= center;">
       <div class="content content-header">
         <div>
-          <h1><%= cl_image_tag @tickets.first.event.photo.key  %></h1>
+          <h1><%= cl_image_tag @tickets.first.event.photo.key, class:"card-event-photo"  %></h1>
         </div>
         <h1 class="mx-width"><%= @tickets.first.event.event_name %></h1>
       </div>
