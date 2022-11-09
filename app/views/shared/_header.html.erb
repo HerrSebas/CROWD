@@ -1,21 +1,22 @@
-<div class="navbar-container header-home">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon header header-home">
+<div class="navbar-container header-home sticky-top">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon header header-home container-fluid">
 
-    <div class="container-fluid">
+    <div class="col">
       <div class="logo-domain">
         <div class="logo-stadium">
-          <a href="/"><img class="png" src="https://res.cloudinary.com/dbnrwssis/image/upload/v1666466796/crowd/crowd-logo_y6dups.png"></a>
+          <%= link_to root_path do %>
+            <%= image_tag 'https://res.cloudinary.com/dbnrwssis/image/upload/v1666466796/crowd/crowd-logo_y6dups.png', class: "png" %>
+          <% end %>
         </div>
-      </div>
 
-    <nav class="navigation">
+      <nav class="navigation">
         <input type="checkbox" id="nav-button">
         <label for="nav-button" onclick></label>
-        <ul class="nav-container" style="display:flex;">
+        <ul class="nav-container" style="display:flex; font-size:16px !important;">
           <li><a><%= link_to "Log In", new_user_session_path %></a></li>
-          <li><a><%= link_to "Sign In", new_user_registration_path %></a></li>
         </ul>
-    </nav>
-
+      </nav>
+      </div>
+    </div>
   </div>
 </div>
