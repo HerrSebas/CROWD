@@ -61,15 +61,11 @@
             <a><strong>How many tickets, <%= current_user.name %>?</strong></a>
             <%= simple_form_for [@event, @order] do |f| %>
             <%= f.input :tickets_quantity, label:"Quantity", input_html:{} %>
+            <%= f.button :submit, "Book a ticket!", class:"btn btn-event" %>
+            <% end %>
           </div>
         </div>
 
-      </div>
-      <div class="row">
-        <div class="col-sm-6" style="display: contents !important;">
-          <%= f.button :submit, "Book a ticket!", class:"btn btn-event" %>
-          <% end %>
-        </div>
       </div>
 
       </div>
