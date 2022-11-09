@@ -1,31 +1,45 @@
-<div class="container">
+<div class="parallax-section4 parallax-event">
+  <div class="grid grid-pad">
+      <div class="col-1-1" style="vertical-align= center;">
+            <div class="content content-header">
+              <h1 class="mx-width">YOUR ORDERS</h1>
+          </div>
+      </div>
+  </div>
+</div>
 
-  <h2>Your Orders</h2>
-  <% @orders.each do |order| %>
-    <ul>
-      <li>
-        <div class="card-container-background">
-          <div class="card-event">
-            <div class="col-5">
+<svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+</svg>
 
-              <%# <% if @order.tickets.first.event.photo %> An image here
-                <%# <%= cl_image_tag @order.photo.key, class:"card-event-photo-index"%>
-              <%# <% end %>
+<div class="container container-fluid">
+  <div class="row" style="grid-gap:0 !important; padding: 1% !important;">
+    <div class="row" style="grid-gap: 0!important; padding: 1% !important; align-items:center !important; border: 3px solid #dee3e4; border-radius: 18px;">
 
-              <h5 class="card-title card-event-title"></h5>
-            </div>
-
-            <div class="col-7">
-              <h4 class="card-details card-details-text">Event: <%= order.tickets.first.event.event_name %></h4>
-              <h4 class="card-details card-details-text">Quantity: <%= order.tickets_quantity %></h4>
-              <h4 class="card-details card-details-text">Purchased at: <%= order.created_at.to_date %></h4>
-              <h4 class="card-details card-details-text">Amount: <%= order.total_price %>$</h4>
-              <h2><%= link_to "Tickets", order_tickets_path(order) %></h2>
-            </div>
-
+      <% @orders.each do |order| %>
+      <div class="col-sm" style="vertical-align: middle !important;">
+        <div class="row row-cols-2" style="grid-gap:0 !important; padding: 1% !important;">
+          <div class="col-sm"><a style="color: grey !important; text-align: center;"><strong>Event:</strong></a></div>
+          <div class="col-sm"><%= order.tickets.first.event.event_name %></div>
+          <div class="col-sm"><a style="color: grey !important; text-align: center;"><strong>Tickets:</strong></a></div>
+          <div class="col-sm"><%= order.tickets_quantity %></div>
+          <div class="col-sm"><a style="color: grey !important; text-align: center;"><strong>Purchased:</strong></a></div>
+          <div class="col-sm"><%= order.created_at.to_date %></div>
         </div>
-      </li>
-    </ul>
-  <% end %>
+      </div>
+
+      <div class="col-sm">
+        <h2 style="margin-bottom: 0px; text-align: center !important;">$ <%= order.total_price %></h2>
+        <li style="color: #b2208e !important; !important; text-align: center !important;"><strong>TOTAL AMOUNT</strong></li>
+        <h2 style="margin-top: 0px; text-align: center !important;"><%= link_to "Go to Tickets", order_tickets_path(order), class: "btn btn-event" %></h2>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
 </div>
+<svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
+</svg>

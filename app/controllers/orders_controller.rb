@@ -18,10 +18,11 @@ class OrdersController < ApplicationController
         color: "black",
         file: nil,
         fill: "white",
+        module_size: 11,
         module_px_size: 6,
         resize_exactly_to: false,
         resize_gte_to: false,
-        size: 120
+        size: 100
       )
       IO.binwrite("/tmp/github-qrcode.png", png.to_s)
       @codes.push(png)

@@ -22,7 +22,6 @@ class EventsController < ApplicationController
         lng: @event.longitude,
         image_url: helpers.asset_url("https://pic.onlinewebfonts.com/svg/img_1091.png")
       }]
-
   end
 
   def new

@@ -1,8 +1,8 @@
 <div class= "container pt-700 bg-white">
-<h2>How many tickets?<%= current_user.name %></h1>
+<h2>How many tickets,<%= current_user.name %>?</h1>
 
   <%= simple_form_for [@event, @order] do |f| %>
     <%= f.input :tickets_quantity, label:"Cantidad", input_html:{} %>
-    <%= f.submit :button, label:"BUY" %>
+    <%= f.submit 'BUY', class:"btn btn-primary" %>
   <% end %>
 </div>
