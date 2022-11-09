@@ -6,7 +6,9 @@ class EventsController < ApplicationController
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude
+        lng: event.longitude,
+        info_window: render_to_string(partial: "popup", locals:{ event: event}),
+        image_url: helpers.asset_url("black_marker.png")
       }
     end
   end
@@ -17,7 +19,8 @@ class EventsController < ApplicationController
     @markers =
       [{
         lat: @event.latitude,
-        lng: @event.longitude
+        lng: @event.longitude,
+        image_url: helpers.asset_url("https://pic.onlinewebfonts.com/svg/img_1091.png")
       }]
   end
 
