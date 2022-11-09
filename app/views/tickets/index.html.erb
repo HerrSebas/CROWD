@@ -26,8 +26,18 @@
     </div>
 
   </div>
+<% else %>
+  <div class="d-flex justify-content-center">
+    <div class="ticket-container">
+      <ul>
+        <h2 class="text-center">These are not your tickets!</h2>
+        <li>You are not allowed to see this view. Contact an Admin</li>
+      </ul>
+    </div>
+  </div>
+
+<% end %>
 
   <svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
     <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
   </svg>
-<% end %>
