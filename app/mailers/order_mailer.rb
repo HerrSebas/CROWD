@@ -21,6 +21,6 @@ class OrderMailer < ApplicationMailer
       )
       @codes.push(png)
     end
-    mail(to: @user.email, subject: "Order details")
+    mail(to: @user.email, subject: "Order ##{@order.id} details ")
   end
 end
