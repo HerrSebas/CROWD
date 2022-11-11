@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
       svg = code.as_svg(
         color: "000",
         shape_rendering: "crispEdges",
-        module_size: 11,
+        module_size: 5,
         standalone: true,
         use_path: true
       )
